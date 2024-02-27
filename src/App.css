@@ -1,38 +1,243 @@
-.App {
-  text-align: center;
+/* Navigointipalkki */
+.navigation {
+  display: flex; /* Flexboxin käyttöönotto, jotta navigointipalkin sisältö voidaan sijoittaa joustavasti */
+  justify-content: flex-start; /* Sisältö jaetaan tasaisesti palkin sisällä vaakasuunnassa */
+  align-items: center; /* Sisältö keskitetään pystysuunnassa navigointipalkin sisällä */
+  background-color: white; /* Taustaväri valkoiseksi */
+  border-bottom: 1px solid #f0f0f0; /* Alareunaan lisätään vaaleanharmaa reunaviiva */
+  padding: 10px; /* Lisätään hieman tyhjää tilaa navigointipalkin ympärille */
+  padding-left: 20px;
+  position: relative; /* Lisätään suhteellinen sijainti */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Navigointipainikkeet */
+.nav-items {
+  display: flex; /* Flexboxin käyttöönotto navigointipainikkeiden sijoittamiseksi joustavasti */
+  list-style-type: none; /* Luetteloitu merkki poistetaan */
+  margin: 0; /* Marginaalit nollataan */
+  padding: 0; /* Sisäiset täytöt nollataan */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.nav-items a {
+  color: #6e492f; /* Linkkien tekstiväri määritellään */
+  text-decoration: none; /* Linkkien alleviivaus poistetaan */
+  font-size: 20px; /* Linkkien fonttikoko asetetaan */
+}
+
+.nav-items li {
+  margin-right: 20px; /* Navigointipainikkeiden väliin lisätään oikealle marginaalia */
+}
+
+.nav-items li button {
+  background: none; /* Painikkeiden taustaväri poistetaan */
+  border: none; /* Painikkeiden reunaviivat poistetaan */
+  cursor: pointer; /* Osoitin muutetaan osoittimeksi osoittimen yli */
+  text-transform: uppercase; /* Teksti muutetaan isoiksi kirjaimiksi */
+}
+
+/* Aktiivinen navigointipainike */
+.active::after {
+  content: ''; /* Tyhjä sisältö lisätään aktiivisen painikkeen jälkeen */
+  display: block; /* Luo uusi lohko-elementti */
+  width: 100%; /* Viivan leveys asetetaan 100% */
+  height: 1px; /* Viivan korkeus asetetaan */
+  background-color: #6e492f; /* Viivan väri asetetaan ruskeaksi */
+  margin-top: 2px; /* Viivan yläreunan marginaali */
+}
+
+/* Logo */
+.logo {
+  height: 60px; /* Logon korkeus asetetaan */
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.component-hidden{
+  display: none;
+}
+
+
+/* Responsiivinen hampurilaisvalikko */
+.menu-icon {
+  display: none; /* Hampurilaisvalikko piilotetaan oletuksena */
+  flex-direction: column; /* Flexboxin suunta asetetaan pystysuoraan */
+  justify-content: space-between; /* Sisältö jaetaan tasaisesti pystysuunnassa */
+  width: 24px; /* Valikon leveys asetetaan */
+  height: 20px; /* Valikon korkeus asetetaan */
+  cursor: pointer; /* Osoitin muutetaan osoittimeksi osoittimen yli */
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.menu-line {
+  width: 100%; /* Viivan leveys asetetaan 100% */
+  height: 2px; /* Viivan korkeus asetetaan */
+  background-color: #6e492f; /* Viivan väri asetetaan ruskeaksi */
+}
+
+/* Taustanäkymä */
+.menu-overlay {
+  display: none; /* Taustanäkymä piilotetaan oletuksena */
+  position: fixed; /* Kiinnitetään taustanäkymä sivuston päälle */
+  top: 0; /* Yläreuna */
+  left: 0; /* Vasen reuna */
+  width: 100%; /* Leveys 100% */
+  background-color: rgba(158, 117, 77, 0.8); /* Taustaväri: ruskea, osittain läpinäkyvä */
+  z-index: 9; /* Pinon syvyysindeksi asetetaan */
+}
+
+@media (max-width: 576px) { /* Media Query pienille näyttöleveyksille */
+
+  
+
+  .nav-items {
+    display: none; /* Piilota navigointipainikkeet pienillä näyttöleveyksillä */
+    flex-direction: column; /* Flexboxin suunta asetetaan pystysuoraan */
+    align-items: flex-end; /* Sisältö oikeaan reunaan */
+  }
+
+  .nav-items.open {
+    display: flex; /* Avattaessa näytä navigointipainikkeet */
+    position: absolute; /* Aseta absoluuttinen sijainti */
+    top: calc(100% + 10px); /* Yläreunaan lisätään 10px */
+    right: 20px; /* Oikeaan reunaan lisätään 10px */
+    background-color: transparent; /* Taustaväri: läpinäkyvä */
+    width: 100%; /* Vie koko näytön leveyden */
+  }
+
+  .nav-items li {
+    margin-right: 0; /* Marginaali oikealle nollataan */
+    margin-bottom: 10px; /* Marginaali alareunaan lisätään */
+  }
+
+  .menu-icon {
+    display: flex; /* Näytä hampurilaisvalikko avattaessa */
+  }
+
+  .menu-overlay {
+    display: block; /* Näytä taustanäkymä avattaessa */
+    height: 100%; /* Korkeus 100% */
+    z-index: 8; /* Pinon syvyysindeksi asetetaan pienemmäksi kuin navigointipalkki */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+
+
+
+ 
+/*.navigation {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; 
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: white; 
+  border-bottom: 1px solid #f0f0f0; 
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.nav-items {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-items a {
+  color: #6e492f; 
+  text-decoration: none; 
+  font-size: 20px;
 }
+
+.nav-items li {
+  margin-right: 20px;
+}
+
+.nav-items li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase; 
+}
+
+
+.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #6e492f;
+  margin-top: 2px; 
+}
+
+
+.logo {
+  height: 60px;
+}
+
+
+.menu-icon {
+  display: none; 
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-line {
+  width: 100%;
+  height: 2px;
+  background-color: #6e492f;
+}
+
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 100%; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(158, 117, 77, 0.8); 
+  z-index: 10; 
+}
+
+@media (max-width: 576px) {
+  .nav-items {
+    display: none; 
+    flex-direction: column; 
+    align-items: flex-end; 
+  }
+
+  .nav-items.open {
+    display: flex; 
+  }
+
+  .nav-items li {
+    margin-right: 0; 
+    margin-bottom: 10px; 
+  }
+
+  .menu-icon {
+    display: flex; 
+  }
+
+  .menu-overlay {
+    display: block; 
+  }
+}*/
+
+
+
+
+
+
+
+
+
+
+
+

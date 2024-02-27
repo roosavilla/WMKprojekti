@@ -1,0 +1,276 @@
+/* etusivu.css */
+
+/* Containerin tyylit */
+.container {
+    position: relative;
+    width: 100vw;
+    height: 62vh;
+}
+
+/* Kuvan tyylit */
+.img-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ensimmäisen divin absoluuttisesti sijoitettujen elementtien tyylit */
+.absolute-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+/* Otsikon tyylit */
+#etusivu {
+    font-size: 4em;
+    -webkit-text-stroke: 1px #4A301E;
+    /* width and color */
+    /* Päivitetty fonttikoko */
+}
+
+h3 {
+    font-size: 2em;
+}
+
+/* Tekstin divin absoluuttisesti sijoitettujen elementtien tyylit */
+.text-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 20%;
+    z-index: 1;
+}
+
+/* Tekstin tyylit */
+.text {
+    -webkit-text-stroke: 1px #4A301E;
+    /* width and color */
+    color: white;
+    text-align: center;
+}
+
+
+
+/* Tekstikentän tyylit */
+input[type="text"] {
+    width: 100%;
+    height: 50%;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 20px;
+}
+
+/* Uusimpien reseptien osion tyylit */
+.reseptit-container {
+    margin-left: 50px;
+    margin-right: 20px;
+    color: #6e492f;
+    position: relative;
+}
+
+/* Ympyröiden tyylit */
+.circle-container {
+    display: flex;
+    overflow-x: hidden;
+    white-space: nowrap;
+    align-items: center;
+    position: relative;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: transparent;
+    /* taustaväri */
+    border: 2px solid #6e492f;
+    /* reunan väri ja leveys */
+    margin-right: 80px;
+    flex-shrink: 0;
+}
+
+.circle-with-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.circle-text {
+    margin-top: 10px;
+    /* Vaihda tarvittaessa haluttuun välimatkaan ympyrän alapuolella */
+    margin-right: 80px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Vieritettävän listan nuolien tyylit */
+.scroll-buttons {
+    position: absolute; /* Asetetaan absoluuttinen sijainti */
+    top: calc(50%);
+    transform: translateY(-50%); /* Siirretään ylös 50% suhteessa omaan korkeuteensa */
+    display: none; /* Piilotetaan napit oletuksena */
+}
+
+/* Vieritettävän listan nuolien tyylit */
+.scroll-buttons button {
+    margin-left: -40px;
+    margin-right: 10px;
+    font-size: 60px;
+    color: #6e492f;
+    background-color: #fff; /* Taustaväri */
+    border: none; /* Poista reuna */
+    border-radius: 50%; /* Pyöristä reunat */
+    padding: 10px; /* Lisää täytettä napin sisälle */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Lisää pieni varjo */
+}
+
+@media only screen and (max-width: 1700px) {
+    .scroll-buttons {
+        display: flex; /* Asetetaan nappulat näkyviin kun näyttöleveys on alle 1700px */
+        justify-content: space-between; /* Asettaa napit yhtä etäälle toisistaan ja laittaa oikean reunan nappiin flex-end */
+        width: 100%;
+    }
+}
+
+
+/* Responsiiviset tyylit */
+@media only screen and (max-width: 1390px) {
+
+    /* Tekstin koko pienemmälle näytölle */
+    .text-container {
+        width: 60%;
+    }
+
+    #etusivu {
+        font-size: 3.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+
+}
+
+/* Responsiiviset tyylit */
+@media only screen and (max-width: 1025px) {
+
+    /* Tekstin koko pienemmälle näytölle */
+    .text-container {
+        width: 70%;
+    }
+
+    #etusivu {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .circle {
+        width: 150px;
+        height: 150px;
+        margin-right: 50px;
+        flex-shrink: 0;
+    }
+
+    .circle-with-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .circle-text {
+        margin-top: 10px;
+        /* Vaihda tarvittaessa haluttuun välimatkaan ympyrän alapuolella */
+        margin-right: 60px;
+        text-align: center;
+    }
+}
+
+/* Responsiiviset tyylit */
+@media only screen and (max-width: 768px) {
+
+    /* Tekstin koko pienemmälle näytölle */
+    .text-container {
+        width: 70%;
+    }
+
+    #etusivu {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    .circle {
+        width: 150px;
+        height: 150px;
+        margin-right: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+    /* Tekstin koko vielä pienemmälle näytölle */
+    .text-container {
+        width: 80%;
+    }
+
+    #etusivu {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 0.9em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    .circle {
+        width: 100px;
+        height: 100px;
+        margin-right: 30px;
+    }
+
+    .circle-with-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    /* Tekstin koko vielä pienemmälle näytölle */
+    .text-container {
+        width: 85%;
+    }
+
+    #etusivu {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 0.9em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+}

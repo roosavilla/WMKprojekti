@@ -1,0 +1,90 @@
+#otsikko {
+    font-size: 3em;
+    margin-left: 50px;
+    color: #6e492f;
+}
+
+#uutisruudukko {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-top: -20px;
+    border-collapse: separate;
+    border-spacing: 0 40px;
+    width: calc(100% - 100px);
+}
+
+#uutisruudukko td {
+    border-color: #6e492f;
+    border-style: solid;
+    border-width: 2px;
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+}
+
+.uutisotsikko {
+    font-size: 2em;
+    color: #6e492f;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.uutisteksti {
+    font-size: 1em;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Responsiiviset tyylit */
+@media only screen and (max-width: 1000px) {
+
+    #otsikko {
+        font-size: 3em;
+        margin-left: 55px;
+    }
+
+    td {
+        display: block;
+        width: calc(100% - 20px);
+    }
+}
+
+/* Responsiiviset tyylit */
+@media only screen and (max-width: 480px) {
+
+    #otsikko {
+        font-size: 2em;
+        margin-left: 20px;
+    }
+
+    td {
+        display: block;
+        width: calc(100% - 30px);
+        height: 50vh;
+    }
+
+    #uutisruudukko {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 25px;
+        margin-top: -10px;
+        border-collapse: separate;
+        border-spacing: 0 30px;
+        width: calc(100% - 40px);
+
+    }
+
+    .uutisotsikko {
+        font-size: 1.5em;
+        color: #6e492f;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .uutisteksti {
+        font-size: 1em;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

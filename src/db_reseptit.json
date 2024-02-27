@@ -1,0 +1,99 @@
+{
+    "reseptit": [
+        {
+            "nimi": "Muffinit",
+            "aika": "25 min",
+            "kuvaus": "Herkullisia muffineita",
+            "kuva": "suklaamuffini.jpg",
+            "annoskoko": "12 kpl",
+            "ainesosat": [
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "vehnäjauhoja"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "sokeria"
+                },
+                {
+                    "maara": "2 tl",
+                    "ainesosa": "leivinjauhetta"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "vaniljasokeria"
+                },
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "munia"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "voita sulatettuna"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "maitoa"
+                },
+                {
+                    "maara": "100 g",
+                    "ainesosa": "suklaarouhetta"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Sekoita kuivat aineet keskenään.",
+                "2. Vatkaa munat ja lisää sulatettu voi sekä maito.",
+                "3. Yhdistä kuivat ja kosteat ainekset nopeasti sekoittaen.",
+                "4. Lisää suklaarouhe ja sekoita tasaiseksi.",
+                "5. Jaa taikina muffinivuokiin.",
+                "6. Paista 200 asteessa noin 15-20 minuuttia."
+            ]
+        },
+        {
+            "nimi": "Pasta Carbonara",
+            "aika": "30 min",
+            "kuvaus": "Herkullinen pasta Carbonara",
+            "kuva": "suklaamuffini.jpg",
+            "annoskoko": "4 annosta",
+            "ainesosat": [
+                {
+                    "maara": "400 g",
+                    "ainesosa": "spagettia"
+                },
+                {
+                    "maara": "150 g",
+                    "ainesosa": "pekonia"
+                },
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "kananmunia"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "parmesaanijuustoa raastettuna"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "kermaa"
+                },
+                {
+                    "maara": "",
+                    "ainesosa": "suolaa ja mustapippuria maun mukaan"
+                },
+                {
+                    "maara": "1 rkl",
+                    "ainesosa": "oliiviöljyä"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Keitä pasta suolalla maustetussa vedessä kypsäksi.",
+                "2. Paista pekoni rapeaksi ja nosta talouspaperin päälle valumaan.",
+                "3. Vatkaa kananmunat kulhossa, lisää joukkoon raastettu parmesaanijuusto ja kerma.",
+                "4. Valuta pasta ja sekoita joukkoon kananmunaseos.",
+                "5. Lisää paistettu pekoni ja sekoita hyvin.",
+                "6. Mausta suolalla ja mustapippurilla.",
+                "7. Tarjoile heti."
+            ]
+        }
+    ]
+}
