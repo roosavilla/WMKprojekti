@@ -47,7 +47,8 @@
                 "4. Lisää suklaarouhe ja sekoita tasaiseksi.",
                 "5. Jaa taikina muffinivuokiin.",
                 "6. Paista 200 asteessa noin 15-20 minuuttia."
-            ]
+            ],
+            "lisayspvm": "2024-03-01"
         },
         {
             "nimi": "Pasta Carbonara",
@@ -93,7 +94,8 @@
                 "5. Lisää paistettu pekoni ja sekoita hyvin.",
                 "6. Mausta suolalla ja mustapippurilla.",
                 "7. Tarjoile heti."
-            ]
+            ],
+            "lisayspvm": "2024-03-01"
         }
     ]
 }
