@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Etusivu from "./Etusivu";
 import Kategoriat from "./Kategoriat";
 import Uutiset from "./Uutiset";
