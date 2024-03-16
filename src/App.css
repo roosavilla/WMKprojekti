@@ -158,6 +158,11 @@
     /* Vie koko näytön leveyden */
   }
 
+  .nav-items.open a {
+    margin-right: 20px;
+    font-size: 40px; /* Määritä haluamasi tekstikoko tässä */
+  }
+
   .nav-items li {
     margin-right: 0;
     /* Marginaali oikealle nollataan */
