@@ -85,22 +85,22 @@ function App() {
         </nav>
         {/* Reitit */}
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/WMKprojekti">
             <Etusivu menuOpen={menuOpen} />
           </Route>
-          <Route path="/kategoriat">
+          <Route path="/WMKprojekti/kategoriat">
             <Kategoriat menuOpen={menuOpen} />
           </Route>
-          <Route path="/uutiset">
+          <Route path="/WMKprojekti/uutiset">
             <Uutiset menuOpen={menuOpen} />
           </Route>
-          <Route path="/tietoa">
+          <Route path="/WMKprojekti/tietoa">
             <Tietoa menuOpen={menuOpen} />
           </Route>
-          <Route path="/resepti/id=:recipeId">
+          <Route path="/WMKprojekti/resepti/id=:recipeId">
             <Resepti menuOpen={menuOpen} />
           </Route>
-          <Route path="/otayhteytta">
+          <Route path="/WMKprojekti/otayhteytta">
             <Otayhteytta menuOpen={menuOpen} />
           </Route>
         </Switch>
