@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Overview
+
+This project was developed as a final project to Web and Mobile User Interfaces course. The project is a recipe site where users can view my favorite recipes (now it is just a template, not the real recipes or pics).
+
 ## Available Scripts
 
 In the project directory, you can run:
