@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Etusivu from "./Etusivu";
 import Kategoriat from "./Kategoriat";
 import Uutiset from "./Uutiset";
@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/WMKprojekti">
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <nav className="navigation">
           <Link
@@ -85,22 +85,22 @@ function App() {
         </nav>
         {/* Reitit */}
         <Switch>
-          <Route exact path="/WMKprojekti">
+          <Route exact path="/">
             <Etusivu menuOpen={menuOpen} />
           </Route>
-          <Route path="/WMKprojekti/kategoriat">
+          <Route path="/kategoriat">
             <Kategoriat menuOpen={menuOpen} />
           </Route>
-          <Route path="/WMKprojekti/uutiset">
+          <Route path="/uutiset">
             <Uutiset menuOpen={menuOpen} />
           </Route>
-          <Route path="/WMKprojekti/tietoa">
+          <Route path="/tietoa">
             <Tietoa menuOpen={menuOpen} />
           </Route>
-          <Route path="/WMKprojekti/resepti/id=:recipeId">
+          <Route path="/resepti/id=:recipeId">
             <Resepti menuOpen={menuOpen} />
           </Route>
-          <Route path="/WMKprojekti/otayhteytta">
+          <Route path="/otayhteytta">
             <Otayhteytta menuOpen={menuOpen} />
           </Route>
         </Switch>
@@ -110,3 +110,4 @@ function App() {
 }
 
 export default App;
+
