@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/WMKprojekti">
       <div className="App">
         <nav className="navigation">
           <Link
