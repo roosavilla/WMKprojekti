@@ -66,7 +66,7 @@ function App() {
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/">
+          <Route exact path={["/", "/etusivu", "/WMKprojekti"]}>
             <Redirect to="/etusivu" />
           </Route>
           <Route exact path="/etusivu">
@@ -94,3 +94,4 @@ function App() {
 }
 
 export default App;
+
