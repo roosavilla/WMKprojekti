@@ -9,26 +9,22 @@ import Resepti from "./Resepti";
 import Otayhteytta from "./Otayhteytta";
 
 function App() {
-  // Alustetaan tila aktiiviselle kohdalle
   const [activeNavItem, setActiveNavItem] = useState(
     localStorage.getItem("activeNavItem") || "ETUSIVU"
   );
-  const [menuOpen, setMenuOpen] = useState(false); // Tila hampurilaisvalikon avoimuudelle
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Funktio aktiivisen kohdan asettamiseksi
   const setActiveItem = (itemName) => {
     setActiveNavItem(itemName);
-    setMenuOpen(false); // Suljetaan hampurilaisvalikko valinnan jälkeen
+    setMenuOpen(false);
     localStorage.setItem("activeNavItem", itemName);
   };
 
   useEffect(() => {
-    // Tarkistetaan, onko LocalStoragesta tallennettu aktiivista valintaa ja päivitetään se
     const storedActiveItem = localStorage.getItem("activeNavItem");
     if (storedActiveItem) {
       setActiveNavItem(storedActiveItem);
     } else {
-      // Jos sivu ladataan ensimmäistä kertaa, ohjaa käyttäjä suoraan etusivulle
       setActiveNavItem("ETUSIVU");
       localStorage.setItem("activeNavItem", "ETUSIVU");
     }
@@ -38,35 +34,22 @@ function App() {
     <Router>
       <div className="App">
         <nav className="navigation">
-          <Link
-            to="/"
-            className="logo-button"
-            onClick={() => setActiveItem("ETUSIVU")}
-          >
-            <img
-              src={require("./RoosanReseptitLogo.png")}
-              alt="Logo"
-              className="logo"
-            />
+          <Link to="/" className="logo-button" onClick={() => setActiveItem("ETUSIVU")}>
+            <img src={require("./RoosanReseptitLogo.png")} alt="Logo" className="logo" />
           </Link>
-          {/* Hampparivalikko */}
           <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
             <div className={menuOpen ? "menu-line open" : "menu-line"}></div>
             <div className={menuOpen ? "menu-line open" : "menu-line"}></div>
             <div className={menuOpen ? "menu-line open" : "menu-line"}></div>
           </div>
           <ul className={menuOpen ? "nav-items open" : "nav-items"}>
-            {/* Painikkeet */}
             <li className={activeNavItem === "ETUSIVU" ? "active" : ""}>
-              <Link to="/" onClick={() => setActiveItem("ETUSIVU")}>
+              <Link to="/etusivu" onClick={() => setActiveItem("ETUSIVU")}>
                 ETUSIVU
               </Link>
             </li>
             <li className={activeNavItem === "KATEGORIAT" ? "active" : ""}>
-              <Link
-                to="/kategoriat"
-                onClick={() => setActiveItem("KATEGORIAT")}
-              >
+              <Link to="/kategoriat" onClick={() => setActiveItem("KATEGORIAT")}>
                 KATEGORIAT
               </Link>
             </li>
@@ -82,7 +65,6 @@ function App() {
             </li>
           </ul>
         </nav>
-        {/* Reitit */}
         <Switch>
           <Route exact path="/">
             <Redirect to="/etusivu" />
