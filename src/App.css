@@ -165,6 +165,11 @@
     /* Marginaali alareunaan lisätään */
   }
 
+  .nav-items.open a {
+    margin-right: 20px;
+    font-size: 40px; /* Määritä haluamasi tekstikoko tässä */
+  }
+
   .menu-icon {
     display: flex;
     /* Näytä hampurilaisvalikko avattaessa */

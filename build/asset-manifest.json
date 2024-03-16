@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/WMKprojekti/static/css/main.4b3e35de.css",
+    "main.css": "/WMKprojekti/static/css/main.e14e2bd1.css",
     "main.js": "/WMKprojekti/static/js/main.d24b4315.js",
     "static/js/592.5eb7f504.chunk.js": "/WMKprojekti/static/js/592.5eb7f504.chunk.js",
     "static/media/pasta.jpg": "/WMKprojekti/static/media/pasta.5cd3d2d2bb4b915639f5.jpg",
@@ -33,12 +33,12 @@
     "static/media/RoosanReseptitLogo.png": "/WMKprojekti/static/media/RoosanReseptitLogo.72b6ed1db753e3b94cdb.png",
     "static/media/index.cjs": "/WMKprojekti/static/media/index.671993152dc0f6e0b17a.cjs",
     "index.html": "/WMKprojekti/index.html",
-    "main.4b3e35de.css.map": "/WMKprojekti/static/css/main.4b3e35de.css.map",
+    "main.e14e2bd1.css.map": "/WMKprojekti/static/css/main.e14e2bd1.css.map",
     "main.d24b4315.js.map": "/WMKprojekti/static/js/main.d24b4315.js.map",
     "592.5eb7f504.chunk.js.map": "/WMKprojekti/static/js/592.5eb7f504.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b3e35de.css",
+    "static/css/main.e14e2bd1.css",
     "static/js/main.d24b4315.js"
   ]
 }
