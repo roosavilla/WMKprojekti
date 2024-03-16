@@ -27,6 +27,10 @@ function App() {
     const storedActiveItem = localStorage.getItem("activeNavItem");
     if (storedActiveItem) {
       setActiveNavItem(storedActiveItem);
+    } else {
+      // Jos sivu ladataan ensimmäistä kertaa, ohjaa käyttäjä suoraan etusivulle
+      setActiveNavItem("ETUSIVU");
+      localStorage.setItem("activeNavItem", "ETUSIVU");
     }
   }, []);
 
