@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Overview
+
+This project was made as a final project to Web- and mobileuserfaces course.
+
 ## Available Scripts
 
 In the project directory, you can run:
