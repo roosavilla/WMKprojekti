@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from "react";
-import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Etusivu from "./Etusivu";
 import Kategoriat from "./Kategoriat";
 import Uutiset from "./Uutiset";
@@ -10,7 +10,9 @@ import Otayhteytta from "./Otayhteytta";
 
 function App() {
   // Alustetaan tila aktiiviselle kohdalle
-  const [activeNavItem, setActiveNavItem] = useState(localStorage.getItem("activeNavItem") || "ETUSIVU");
+  const [activeNavItem, setActiveNavItem] = useState(
+    localStorage.getItem("activeNavItem") || "ETUSIVU"
+  );
   const [menuOpen, setMenuOpen] = useState(false); // Tila hampurilaisvalikon avoimuudelle
 
   // Funktio aktiivisen kohdan asettamiseksi
@@ -24,7 +26,6 @@ function App() {
     // Tämä ajetaan aina kun komponentti latautuu
     setActiveItem("ETUSIVU");
   }, []);
-  
 
   useEffect(() => {
     // Tarkistetaan, onko LocalStoragesta tallennettu aktiivista valintaa ja päivitetään se
@@ -35,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/WMKprojekti">
       <div className="App">
         <nav className="navigation">
           <Link
@@ -76,10 +77,7 @@ function App() {
               </Link>
             </li>
             <li className={activeNavItem === "TIETOA" ? "active" : ""}>
-              <Link
-                to="/tietoa"
-                onClick={() => setActiveItem("TIETOA")}
-              >
+              <Link to="/tietoa" onClick={() => setActiveItem("TIETOA")}>
                 TIETOA
               </Link>
             </li>
@@ -87,12 +85,24 @@ function App() {
         </nav>
         {/* Reitit */}
         <Switch>
-          <Route exact path="/"><Etusivu menuOpen={menuOpen}/></Route>
-          <Route path="/kategoriat"><Kategoriat menuOpen={menuOpen}/></Route>
-          <Route path="/uutiset"><Uutiset menuOpen={menuOpen}/></Route>
-          <Route path="/tietoa"><Tietoa menuOpen={menuOpen}/></Route>
-          <Route path="/resepti/id=:recipeId"><Resepti menuOpen={menuOpen}/></Route>
-          <Route path="/otayhteytta"><Otayhteytta menuOpen={menuOpen}/></Route>
+          <Route exact path="/WMKprojekti">
+            <Etusivu menuOpen={menuOpen} />
+          </Route>
+          <Route path="/WMKprojekti/kategoriat">
+            <Kategoriat menuOpen={menuOpen} />
+          </Route>
+          <Route path="/WMKprojekti/uutiset">
+            <Uutiset menuOpen={menuOpen} />
+          </Route>
+          <Route path="/WMKprojekti/tietoa">
+            <Tietoa menuOpen={menuOpen} />
+          </Route>
+          <Route path="/WMKprojekti/resepti/id=:recipeId">
+            <Resepti menuOpen={menuOpen} />
+          </Route>
+          <Route path="/WMKprojekti/otayhteytta">
+            <Otayhteytta menuOpen={menuOpen} />
+          </Route>
         </Switch>
       </div>
     </Router>
