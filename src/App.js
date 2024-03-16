@@ -23,17 +23,16 @@ function App() {
   };
 
   useEffect(() => {
-    // Tämä ajetaan aina kun komponentti latautuu
-    setActiveItem("ETUSIVU");
-  }, []);
-
-  useEffect(() => {
     // Tarkistetaan, onko LocalStoragesta tallennettu aktiivista valintaa ja päivitetään se
     const storedActiveItem = localStorage.getItem("activeNavItem");
     if (storedActiveItem) {
       setActiveNavItem(storedActiveItem);
+    } else {
+      // Jos LocalStoragesta ei löytynyt tallennettua arvoa, asetetaan oletusarvoksi "ETUSIVU"
+      setActiveItem("ETUSIVU");
     }
   }, []);
+  
 
   return (
     <Router basename={process.env.PUBLIC_URL}>

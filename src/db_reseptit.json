@@ -306,7 +306,7 @@
         },
         {
             "id": 6,
-            "nimi": "Suklaahippukeksit",
+            "nimi": "Suklaakeksit",
             "kategoria": "leivonnaiset",
             "aika": "20 min",
             "kuvaus": "Täydellisen pehmeät ja herkulliset suklaahippukeksit, jotka vievät taatusti makeanhimon pois",
@@ -412,7 +412,7 @@
         },
         {
             "id": 8,
-            "nimi": "Dominojuustokakku",
+            "nimi": "Domino-kakku",
             "kategoria": "leivonnaiset",
             "aika": "180 min",
             "kuvaus": "Raikas ja herkullinen dominojuustokakku",

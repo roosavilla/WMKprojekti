@@ -18,14 +18,12 @@
 }
 
 #tietoa-table {
-    margin-right: 50px;
-    margin-top: -20px;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    max-width: 1600px;
     border-collapse: separate;
-    border-spacing: 80px 40px;
-    /* Lisää tilaa sarakkeiden ja rivien väliin */
-    width: calc(100% - 100px);
-    /* Yhdistetään solujen reunat */
 }
 
 #tietoa-table td {
@@ -222,6 +220,15 @@
         width: 100%;
     }
 
+    #tietoa-table {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        max-width: 1100px;
+        border-collapse: separate;
+    }
+
 
     #tietoa-table td {
         width: 100%;
@@ -247,6 +254,15 @@
         text-shadow: none;
     }
 
+    #tietoa-table {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        max-width: 500px;
+        border-collapse: separate;
+    }
+
     #tietoa-table td:nth-child(even) {
         min-width: 50vh;
         min-height: 40vh;
@@ -263,7 +279,16 @@
             1px -1px 0 #fff,
             -1px 1px 0 #fff,
             1px 1px 0 #fff;
-        ;
+        
+    }
+
+    #tietoa-table {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        max-width: 590px;
+        border-collapse: separate;
     }
 
     #tietoa-table td:nth-child(even) {
@@ -276,20 +301,22 @@
 
     #tietoa-table td:nth-child(even) {
         width: 100%;
-        min-height: fit-content;
+        height: auto;
     }
 
     .tietoa-otsikko {
-        margin-left: 20px;
+        margin-left: 30px;
         font-size: 2em;
         color: #6e492f;
     }
 
     #tietoa-table {
-        margin-right: 25px;
-        margin-left: -25px;
-        width: calc(100% - 50px);
-        /* Yhdistetään solujen reunat */
+        margin-left: -20px;
+        margin-right: auto;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        height: auto;
+        border-collapse: separate;
     }
 
     .tarkoitusotsikko {
@@ -329,25 +356,26 @@
     
 }
 
-@media only screen and (max-width: 320px) {
+
+@media (max-width: 450px) {
 
     #tietoa-table td:nth-child(even) {
-        min-width: 30vh;
-        min-height: 20vh;
+        width: 100%;
+        min-width: 300px;
+        height: auto;
+    }
+}
+
+@media (max-width: 380px) {
+
+    #tietoa-table td:nth-child(even) {
+        width: 100%;
+        min-width: 250px;
+        height: auto;
     }
 
-    .tietoa-otsikko {
-        margin-left: 20px;
-        font-size: 1.5em;
-        color: #6e492f;
+    #tietoa-table{
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
-
-    .tarkoitusotsikko {
-        font-size: 1.0em;
-        color: #6e492f;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-
 }

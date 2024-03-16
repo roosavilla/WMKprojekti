@@ -40,22 +40,24 @@ h3 {
     align-items: center;
 }
 
-
-/* Tekstin divin absoluuttisesti sijoitettujen elementtien tyylit */
 .text-container {
     position: absolute;
-    top: 45%;
+    top: 50%;
+    /* Aseta sivun yläreuna 50%:iin näytön korkeudesta */
     left: 50%;
+    /* Aseta sivun vasen reuna 50%:iin näytön leveydestä */
     transform: translate(-50%, -50%);
+    /* Keskitä elementti sekä vaaka- että pystysuunnassa */
     width: 50%;
-    height: 20%;
+    /* Aseta leveys halutuksi */
+    height: auto;
+    /* Varmista, että korkeus mukautuu sisällön mukaan */
     z-index: 1;
 }
 
 /* Tekstin tyylit */
 .text {
     -webkit-text-stroke: 1px #4A301E;
-    /* width and color */
     color: white;
     text-align: center;
 }
@@ -239,6 +241,10 @@ input[type="text"] {
         width: 70%;
     }
 
+    .text {
+        -webkit-text-stroke: 0.9px #4A301E;
+    }
+
     #etusivu {
         font-size: 3em;
     }
@@ -331,20 +337,58 @@ input[type="text"] {
         margin-right: 25px;
         margin-bottom: 25px;
     }
+
     /* Napit pienenevät samassa suhteessa kuin teksti */
     .nice-button {
-        font-size: 0.5em; /* Aseta fonttikoko haluttuun kokoonsa */
+        font-size: 0.5em;
+        /* Aseta fonttikoko haluttuun kokoonsa */
     }
 }
 
+@media only screen and (max-width: 420px) {
 
+    .absolute-content {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 1;
+    }
 
-
-@media only screen and (max-width: 320px) {
-
-    /* Tekstin koko vielä pienemmälle näytölle */
     .text-container {
-        width: 85%;
+        position: absolute;
+        top: 50%;
+        /* Aseta sivun yläreuna 50%:iin näytön korkeudesta */
+        left: 50%;
+        /* Aseta sivun vasen reuna 50%:iin näytön leveydestä */
+        transform: translate(-50%, -50%);
+        /* Keskitä elementti sekä vaaka- että pystysuunnassa */
+        width: 80%;
+        /* Aseta leveys halutuksi */
+        height: auto;
+        /* Varmista, että korkeus mukautuu sisällön mukaan */
+        z-index: 1;
+    }
+
+}
+
+@media only screen and (max-width: 355px) {
+
+    .text-container {
+        position: absolute;
+        top: 50%;
+        /* Aseta sivun yläreuna 50%:iin näytön korkeudesta */
+        left: 50%;
+        /* Aseta sivun vasen reuna 50%:iin näytön leveydestä */
+        transform: translate(-50%, -50%);
+        /* Keskitä elementti sekä vaaka- että pystysuunnassa */
+        width: 70%;
+        /* Aseta leveys halutuksi */
+        height: auto;
+        /* Varmista, että korkeus mukautuu sisällön mukaan */
+        z-index: 1;
     }
 
     #etusivu {
@@ -358,4 +402,33 @@ input[type="text"] {
     h3 {
         font-size: 1.2em;
     }
+}
+
+@media only screen and (max-width: 250px) {
+
+    .absolute-content {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 1;
+    }
+
+    .text-container {
+        position: absolute;
+        top: 50%;
+        /* Aseta sivun yläreuna 50%:iin näytön korkeudesta */
+        left: 50%;
+        /* Aseta sivun vasen reuna 50%:iin näytön leveydestä */
+        transform: translate(-50%, -50%);
+        /* Keskitä elementti sekä vaaka- että pystysuunnassa */
+        width: 80%;
+        /* Aseta leveys halutuksi */
+        height: auto;
+        /* Varmista, että korkeus mukautuu sisällön mukaan */
+        z-index: 1;
+    }
+
 }

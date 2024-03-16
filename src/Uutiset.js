@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Uutiset.css";
 
 const Uutiset = ({ menuOpen }) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Skrollaa sivu ylös, kun komponentti latautuu
+  }, []); // Tyhjä riippuvuuslista varmistaa, että tämä suoritetaan vain kerran, kun komponentti latautuu
+  
   return (
     <div className={menuOpen ? "component-hidden" : ""}>
       <h1 id="otsikko">Uutiset</h1>

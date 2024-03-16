@@ -10,12 +10,14 @@ function Resepti({menuOpen}) {
   const [resepti, setResepti] = useState(null);
   const { recipeId } = useParams(); // Haetaan reitistä recipeId-parametri
 
-  console.log("resepti komponentti, recipeid", recipeId);
-
   useEffect(() => {
     // Asetetaan ensimmäinen resepti komponentin tilaan
     setResepti(reseptitData.reseptit[recipeId]);
   }, [recipeId]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Skrollaa sivu ylös, kun komponentti latautuu
+  }, []); // Tyhjä riippuvuuslista varmistaa, että tämä suoritetaan vain kerran, kun komponentti latautuu
 
 
   return (
@@ -26,7 +28,7 @@ function Resepti({menuOpen}) {
           <tbody>
             <tr>
               <td id="ruokanimi">
-                <h1 className="ruskea">{resepti.nimi}</h1>
+                <h1 id="resepti-reseptinnimi" className="ruskea">{resepti.nimi}</h1>
                 <p className="ruskea">
                   <b>
                     <FaRegClock /> {resepti.aika}

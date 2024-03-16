@@ -43,9 +43,10 @@ function Otayhteytta({ menuOpen }) {
           className="tietoa-teksti"
           rows="1"
           value={sahkoposti}
+          style={{border: "1px solid #4A301E"}}
           onChange={(e) => setSahkoposti(e.target.value)}
         />
-        <label htmlFor="aihe" className="tarkoitusotsikko">
+        <label htmlFor="aiheTeksti" className="tarkoitusotsikko">
           AIHE:
         </label>
         <textarea
@@ -53,6 +54,7 @@ function Otayhteytta({ menuOpen }) {
           className="tietoa-teksti"
           rows="1"
           value={aiheTeksti}
+          style={{border: "1px solid #4A301E"}}
           onChange={(e) => setAiheTeksti(e.target.value)}
         />
         <label htmlFor="vapaaTeksti" className="tarkoitusotsikko">
@@ -63,6 +65,7 @@ function Otayhteytta({ menuOpen }) {
           className="tietoa-teksti"
           rows="8"
           value={vapaaTeksti}
+          style={{border: "1px solid #4A301E"}}
           onChange={(e) => setVapaaTeksti(e.target.value)}
         />
         <br></br>

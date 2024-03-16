@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Tietoa.css";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { FaQuestion } from "react-icons/fa6";
@@ -14,6 +14,10 @@ const Tietoa = ({ menuOpen }) => {
   const avaaLomake = () => {
     history.push(`/otayhteytta`)
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Skrollaa sivu ylös, kun komponentti latautuu
+  }, []); // Tyhjä riippuvuuslista varmistaa, että tämä suoritetaan vain kerran, kun komponentti latautuu
 
   const handleSubmit = (e) => {
     e.preventDefault();

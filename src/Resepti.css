@@ -1,9 +1,9 @@
 #reseptiruudukko {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 50px;
     margin-top: 50px;
-    width: calc(100% - 200px);
+    max-width: 1300px;
     border-collapse: collapse;
 }
 
@@ -17,10 +17,6 @@
     vertical-align: top;
     padding: 10px 30px;
 }
-
-
-
-
 
 #ruokaainekset {
     width: 30%;
@@ -75,6 +71,36 @@
     border-bottom: 1px solid #6e492f;
 }
 
+#resepti-reseptinnimi {
+    font-size: 3.5em;
+}
+
+@media (max-width: 1400px){
+    #reseptiruudukko {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        max-width: 1100px;
+        border-collapse: collapse;
+    }
+
+    #resepti-reseptinnimi {
+        font-size: 3.5em;
+    }
+}
+
+@media (max-width: 1200px){
+    #reseptiruudukko {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        max-width: 900px;
+        border-collapse: collapse;
+    }
+}
+
 
 @media (max-width: 1000px) {
 
@@ -117,17 +143,37 @@
         padding: 10px 30px;
     }
 
+    #reseptiruudukko {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        width: 80%;
+        border-collapse: collapse;
+    }
+
+    #resepti-reseptinnimi {
+        font-size: 3em;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    #resepti-reseptinnimi {
+        font-size: 3em;
+    }
 }
 
 
 @media (max-width: 500px) {
 
     #reseptiruudukko {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
         margin-bottom: 20px;
         margin-top: 20px;
-        width: calc(100% - 100px);
+        width: (100%-20px);
         border-collapse: collapse;
     }
 
@@ -167,13 +213,15 @@
         padding: 10px 30px;
     }
 
+    #resepti-reseptinnimi {
+        font-size: 2em;
+    }
+
 }
 
+@media only screen and (max-width: 320px) {
 
-
-
-
-
-
-
-
+    #resepti-reseptinnimi {
+        font-size: 2em;
+    }
+}

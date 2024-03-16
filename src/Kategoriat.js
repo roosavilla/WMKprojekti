@@ -4,24 +4,11 @@ import { useHistory } from "react-router-dom";
 import db_reseptit from "./db_reseptit.json";
 
 const Kategoriat = ({ menuOpen }) => {
-  const history = useHistory();
   const [scrollPositions, setScrollPositions] = useState({
     aamupala: 0,
     lounas: 0,
     leivonnaiset: 0,
     valipala: 0,
-  });
-  const [showLeftButtons, setShowLeftButtons] = useState({
-    aamupala: false,
-    lounas: false,
-    leivonnaiset: false,
-    valipala: false,
-  });
-  const [showRightButtons, setShowRightButtons] = useState({
-    aamupala: false,
-    lounas: false,
-    leivonnaiset: false,
-    valipala: false,
   });
   const squareContainerRefs = {
     aamupala: useRef(null),
@@ -29,56 +16,121 @@ const Kategoriat = ({ menuOpen }) => {
     leivonnaiset: useRef(null),
     valipala: useRef(null),
   };
+  const history = useHistory();
+  const activeContainerRef = useRef(null);
+  const containerStartScrollLeft = useRef(0);
+  const containerStartTouchX = useRef(0);
+  const containerStartMouseX = useRef(0);
+  const scrollStepFactor = 1; // Adjust this factor as needed
 
   useEffect(() => {
-    const updateScrollButtons = (category) => {
-      const container = squareContainerRefs[category].current;
-      if (container) {
-        const scrollableWidth = container.scrollWidth - container.clientWidth;
-        setShowLeftButtons((prevState) => ({
+    window.scrollTo(0, 0); // Skrollaa sivu ylös, kun komponentti latautuu
+  }, []); // Tyhjä riippuvuuslista varmistaa, että tämä suoritetaan vain kerran, kun komponentti latautuu
+
+  useEffect(() => {
+    const handleTouchStart = (event, category) => {
+      const touch = event.touches[0];
+      containerStartTouchX.current = touch.clientX;
+      containerStartScrollLeft.current =
+        squareContainerRefs[category].current.scrollLeft;
+      activeContainerRef.current = category;
+    };
+
+    const handleTouchMove = (event) => {
+      const touch = event.touches[0];
+      const touchDeltaX = touch.clientX - containerStartTouchX.current;
+      const containerDeltaX = touchDeltaX * scrollStepFactor;
+      const newScrollLeft = containerStartScrollLeft.current - containerDeltaX;
+    
+      // Tarkistetaan, ettei uusi sijainti mene containerin ulkopuolelle
+      const containerWidth = squareContainerRefs[activeContainerRef.current].current.clientWidth;
+      const maxScrollLeft = squareContainerRefs[activeContainerRef.current].current.scrollWidth - containerWidth;
+      if (newScrollLeft >= 0 && newScrollLeft <= maxScrollLeft) {
+        squareContainerRefs[activeContainerRef.current].current.scrollLeft = newScrollLeft;
+        setScrollPositions((prevState) => ({
           ...prevState,
-          [category]: scrollPositions[category] > 0,
-        }));
-        setShowRightButtons((prevState) => ({
-          ...prevState,
-          [category]: scrollPositions[category] < scrollableWidth,
+          [activeContainerRef.current]: newScrollLeft,
         }));
       }
     };
 
-    Object.keys(scrollPositions).forEach((category) => {
-      updateScrollButtons(category);
+    const handleTouchEnd = () => {
+      containerStartTouchX.current = null;
+      activeContainerRef.current = null;
+    };
+
+    const handleMouseDown = (event, category) => {
+      containerStartMouseX.current = event.clientX;
+      containerStartScrollLeft.current =
+        squareContainerRefs[category].current.scrollLeft;
+      activeContainerRef.current = category;
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+    };
+
+    const handleMouseMove = (event) => {
+      const mouseDeltaX = event.clientX - containerStartMouseX.current;
+      const containerDeltaX = mouseDeltaX * scrollStepFactor;
+      const newScrollLeft = containerStartScrollLeft.current - containerDeltaX;
+    
+      // Tarkistetaan, ettei uusi sijainti mene containerin ulkopuolelle
+      const containerWidth = squareContainerRefs[activeContainerRef.current].current.clientWidth;
+      const maxScrollLeft = squareContainerRefs[activeContainerRef.current].current.scrollWidth - containerWidth;
+      if (newScrollLeft >= 0 && newScrollLeft <= maxScrollLeft) {
+        squareContainerRefs[activeContainerRef.current].current.scrollLeft = newScrollLeft;
+        setScrollPositions((prevState) => ({
+          ...prevState,
+          [activeContainerRef.current]: newScrollLeft,
+        }));
+      }
+    };
+    
+
+    const handleMouseUp = () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+      activeContainerRef.current = null;
+    };
+
+    Object.keys(squareContainerRefs).forEach((category) => {
+      const container = squareContainerRefs[category].current;
+      if (container) {
+        container.addEventListener("touchstart", (e) =>
+          handleTouchStart(e, category)
+        );
+        container.addEventListener("touchmove", handleTouchMove);
+        container.addEventListener("touchend", handleTouchEnd);
+        container.addEventListener("mousedown", (e) =>
+          handleMouseDown(e, category)
+        );
+      }
     });
-  }, [scrollPositions]);
 
-  const scrollRight = (category) => {
-    const container = squareContainerRefs[category].current;
-    if (container) {
-      container.scrollLeft += 150;
-      setScrollPositions((prevState) => ({
-        ...prevState,
-        [category]: container.scrollLeft,
-      }));
-    }
-  };
-
-  const scrollLeft = (category) => {
-    const container = squareContainerRefs[category].current;
-    if (container) {
-      container.scrollLeft -= 150;
-      setScrollPositions((prevState) => ({
-        ...prevState,
-        [category]: container.scrollLeft,
-      }));
-    }
-  };
+    return () => {
+      Object.keys(squareContainerRefs).forEach((category) => {
+        const container = squareContainerRefs[category].current;
+        if (container) {
+          container.removeEventListener("touchstart", (e) =>
+            handleTouchStart(e, category)
+          );
+          container.removeEventListener("touchmove", handleTouchMove);
+          container.removeEventListener("touchend", handleTouchEnd);
+          container.removeEventListener("mousedown", (e) =>
+            handleMouseDown(e, category)
+          );
+        }
+      });
+    };
+  }, []);
 
   const showRecipe = (recipeId) => {
-    console.log("Painettu, id on ", recipeId);
     history.push(`/resepti/id=${recipeId}`);
   };
 
   const getCategoryTitle = (category) => {
+    if (category === null || category === undefined) {
+      return ""; // Palautetaan tyhjä merkkijono, jos category on null tai undefined
+    }
     switch (category) {
       case "aamupala":
         return "AAMUPALA JA BRUNSSI";
@@ -98,31 +150,7 @@ const Kategoriat = ({ menuOpen }) => {
       <h1 id="otsikko">Kategoriat</h1>
       {Object.keys(scrollPositions).map((category, index) => (
         <div key={index} className={`${category}-container`}>
-          <h3>
-            {getCategoryTitle(category)}{" "}
-            <span style={{ marginLeft: "5px" }}></span>
-            <div id="kategoriatnappulat">
-            <button
-              className="nice-button"
-              onClick={() => scrollLeft(category)}
-              style={{
-                visibility: showLeftButtons[category] ? "visible" : "hidden",
-              }}
-              disabled={scrollPositions[category] === 0}
-            >
-              {"<"}
-            </button>
-            <button
-              className="nice-button"
-              onClick={() => scrollRight(category)}
-              style={{
-                visibility: showRightButtons[category] ? "visible" : "hidden",
-              }}
-            >
-              {">"}
-            </button>
-            </div>
-          </h3>
+          <h3>{getCategoryTitle(category)} </h3>
           <div className="square-container" ref={squareContainerRefs[category]}>
             {db_reseptit.reseptit
               .filter((recipe) => recipe.kategoria === category)
