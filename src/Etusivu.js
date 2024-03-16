@@ -1,61 +1,58 @@
+// Etusivu.js
 import React, { useRef, useEffect, useState } from "react";
 import "./Etusivu.css";
 import { VscSearch } from "react-icons/vsc";
+import { TfiFaceSad } from "react-icons/tfi";
 import db_reseptit from "./db_reseptit.json";
+import { useHistory } from "react-router-dom";
 
 const Etusivu = ({ menuOpen }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResult, setSearchResult] = useState(null); // Tilamuuttuja hakutulokselle
-  const [searchPerformed, setSearchPerformed] = useState(false); // Tilamuuttuja, joka kertoo, onko haku suoritettu
-
+  const [searchResult, setSearchResult] = useState(null);
+  const [searchPerformed, setSearchPerformed] = useState(false);
+  //const [selectedRecipeId, setSelectedRecipeId] = useState(null);
   const circleContainerRef = useRef(null);
+  const history = useHistory();
 
   useEffect(() => {
     const updateButtons = () => {
       const container = circleContainerRef.current;
       if (container) {
-        const scrollableWidth =
-          container.scrollWidth - container.clientWidth;
-        setShowLeftButton(container.scrollLeft > 0); // Näytä vasen nappula, jos scrolli on vasemmalla
-        setShowRightButton(container.scrollLeft < scrollableWidth); // Näytä oikea nappula, jos scrolli on oikealla
+        const scrollableWidth = container.scrollWidth - container.clientWidth;
+        setShowLeftButton(container.scrollLeft > 0);
+        setShowRightButton(container.scrollLeft < scrollableWidth);
       }
     };
 
-    // Päivitä napit myös näyttölaitteen leveyden muutoksissa
     const handleResize = () => {
       updateButtons();
     };
 
-    // Lisää tapahtumankäsittelijä näytön koon muutoksille
     window.addEventListener("resize", handleResize);
-
-    // Ensimmäinen päivitys
     updateButtons();
 
-    // Poista tapahtumankäsittelijä kun komponentti puretaan
+    // Tämä suoritetaan kun komponentti purkautuu
     return () => window.removeEventListener("resize", handleResize);
-  }, [scrollPosition]);
+
+    // Jos haluat, että tämä koukku suoritetaan aina kun searchPerformed muuttuu,
+    // voit lisätä searchPerformed riippuvuudeksi kuten alla:
+  }, [scrollPosition, searchPerformed]);
 
   const handleSearch = () => {
     const lowercaseQuery = searchQuery.toLowerCase().trim();
-
-    // Suodatetaan reseptit hakusanan perusteella
     const foundRecipes = db_reseptit.reseptit.filter((recipe) => {
       const lowercaseName = recipe.nimi.toLowerCase().replace(/\s+/g, "");
       return lowercaseName.includes(lowercaseQuery);
     });
 
-    // Aseta hakutulos tilaan
     setSearchResult(foundRecipes);
-
-    // Aseta tila hakutuloksen perusteella
     setSearchPerformed(true);
 
     if (foundRecipes.length !== 0) {
-      console.log(foundRecipes); // Tulosta löytyneet reseptit konsoliin
+      console.log(foundRecipes);
     } else {
       console.log("Ei löytynyt reseptejä");
     }
@@ -63,7 +60,6 @@ const Etusivu = ({ menuOpen }) => {
 
   const handleInputChange = (event) => {
     setSearchQuery(event.target.value);
-    // Aseta hakutulos nulliksi ja tila, että haku on suoritettu, kun käyttäjä muuttaa hakusanaa
     setSearchResult(null);
     setSearchPerformed(false);
   };
@@ -77,7 +73,7 @@ const Etusivu = ({ menuOpen }) => {
   const scrollRight = () => {
     const container = circleContainerRef.current;
     if (container) {
-      container.scrollLeft += 100;
+      container.scrollLeft += 150;
       setScrollPosition(container.scrollLeft);
     }
   };
@@ -85,9 +81,14 @@ const Etusivu = ({ menuOpen }) => {
   const scrollLeft = () => {
     const container = circleContainerRef.current;
     if (container) {
-      container.scrollLeft -= 100;
+      container.scrollLeft -= 150;
       setScrollPosition(container.scrollLeft);
     }
+  };
+
+  const showRecipe = (recipeId) => {
+    console.log("painettu, id on ", recipeId);
+    history.push(`/resepti/id=${recipeId}`);
   };
 
   return (
@@ -122,10 +123,10 @@ const Etusivu = ({ menuOpen }) => {
               onKeyPress={handleKeyPress}
               onFocus={(e) => {
                 e.target.style.border = "2px solid rgba(110, 73, 47, 1)";
-              }} // Kun input-kenttä saa fokuksen, muutetaan reunus ruskeaksi
+              }}
               onBlur={(e) => {
                 e.target.style.border = "none";
-              }} // Kun input-kenttä menettää fokuksen
+              }}
             />
             <div
               style={{
@@ -143,7 +144,7 @@ const Etusivu = ({ menuOpen }) => {
         </div>
       </div>
       <div className="reseptit-container">
-        <h3>
+        <h3 id="etusivunnappulat">
           {searchPerformed
             ? searchResult && searchResult.length > 0
               ? `HAULLASI LÖYTYI ${searchResult.length} RESEPTI${
@@ -151,31 +152,83 @@ const Etusivu = ({ menuOpen }) => {
                 }`
               : "HAULLASI EI LÖYTYNYT RESEPTEJÄ"
             : "UUSIMMAT RESEPTIT"}
+          <span id="etusivu-napit-vali" style={{ marginLeft: "10px" }}></span>
+          <div id="etusivunappulat">
+            <button
+              className="nice-button"
+              onClick={scrollLeft}
+              style={{
+                visibility: showLeftButton ? "visible" : "hidden",
+              }}
+            >
+              {"<"}
+            </button>
+            <button
+              className="nice-button"
+              onClick={scrollRight}
+              style={{
+                visibility: showRightButton ? "visible" : "hidden",
+              }}
+            >
+              {">"}
+            </button>
+          </div>
         </h3>
         <div className="circle-container" ref={circleContainerRef}>
-          {searchPerformed && searchResult ? (
-            searchResult.map((recipe, index) => (
-              <div key={index} className="circle-with-text">
-                <div
-                  className="circle"
-                  style={{
-                    backgroundImage: `url(${require(`./${recipe.kuva}`)})`,
-                    backgroundSize: "cover",
-                  }}
-                ></div>
-                <div className="circle-text">{recipe.nimi}</div>
-              </div>
-            ))
-          ) : (
-            [...Array(6)].map((_, index) => (
-              <div key={index} className="circle-with-text">
-                <div className="circle"></div>
-                <div className="circle-text">Ruuan nimi</div>
-              </div>
-            ))
+          {searchPerformed && searchResult
+            ? searchResult.map((recipe, index) => (
+                <div key={index} className="circle-with-text">
+                  <button
+                    className="circle"
+                    style={{
+                      backgroundImage: `url(${require(`./${recipe.kuva}`)})`,
+                      backgroundSize: "cover",
+                    }}
+                    onClick={() => showRecipe(recipe.id)}
+                  ></button>
+                  <div className="circle-text">{recipe.nimi}</div>
+                </div>
+              ))
+            : db_reseptit.reseptit
+                .slice(0, 6) // Valitse kuusi ensimmäistä reseptiä
+                .map((recipe, index) => (
+                  <div key={index} className="circle-with-text">
+                    <button
+                      className="circle"
+                      style={{
+                        backgroundImage: `url(${require(`./${recipe.kuva}`)})`,
+                        backgroundSize: "cover",
+                      }}
+                      onClick={() => showRecipe(recipe.id)}
+                    ></button>
+                    <div className="circle-text">{recipe.nimi}</div>
+                  </div>
+                ))}
+
+          {searchPerformed && searchResult && searchResult.length === 0 && (
+            <div className="no-results">
+              <p>
+                {" "}
+                <b>
+                  <TfiFaceSad id="surunaama" />
+                </b>
+                Kokeile toista hakusanaa tai{" "}
+                <span id="vaihdarivi">
+                  tarkastele reseptejä kategorioittain.
+                </span>
+              </p>
+            </div>
           )}
         </div>
-        <div className="scroll-buttons">
+      </div>
+    </div>
+  );
+};
+
+export default Etusivu;
+
+/*
+<div className="scroll-buttons">
           {searchPerformed ? null : (
             <>
               <button
@@ -198,10 +251,4 @@ const Etusivu = ({ menuOpen }) => {
             </>
           )}
         </div>
-      </div>
-    </div>
-  );
-};
-
-export default Etusivu;
-
+*/

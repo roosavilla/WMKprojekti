@@ -20,7 +20,8 @@
     border-width: 2px;
     position: relative;
     width: 100vw;
-    height: 40vh;
+    height: auto;
+    overflow: hidden;
 }
 
 .uutisotsikko {
@@ -36,15 +37,60 @@
     margin-right: 20px;
 }
 
+
+.ruokakuva {
+    width: auto;
+    height: 50vh;
+    border-color: #6e492f;
+    border-style: solid;
+    border-width: 2px;
+    padding: 1px;
+    position: relative;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.ruokakuva img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* Responsiiviset tyylit */
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 1001px) and (max-width: 1230px) {
+
+    #uutisruudukko td {
+        border-color: #6e492f;
+        border-style: solid;
+        border-width: 2px;
+        position: relative;
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+    }
+    
+    .ruokakuva {
+        width: auto;
+        height: 50vh;
+        border-color: #6e492f;
+        border-style: solid;
+        border-width: 2px;
+        padding: 1px;
+        position: relative;
+        vertical-align: top;
+        overflow: hidden;
+    }
+}
+
+/* Responsiiviset tyylit */
+@media only screen and (max-width: 1200px) {
 
     #otsikko {
         font-size: 3em;
         margin-left: 55px;
     }
 
-    td {
+    #uutisruudukko td {
         display: block;
         width: calc(100% - 20px);
     }
@@ -58,10 +104,10 @@
         margin-left: 20px;
     }
 
-    td {
+    #uutisruudukko td {
         display: block;
         width: calc(100% - 30px);
-        height: 50vh;
+        height: auto;
     }
 
     #uutisruudukko {
@@ -71,7 +117,7 @@
         margin-top: -10px;
         border-collapse: separate;
         border-spacing: 0 30px;
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
 
     }
 
@@ -81,7 +127,7 @@
         margin-left: 20px;
         margin-right: 20px;
     }
-    
+
     .uutisteksti {
         font-size: 1em;
         margin-left: 20px;

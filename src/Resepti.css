@@ -19,8 +19,11 @@
 }
 
 
+
+
+
 #ruokaainekset {
-    width: 40%;
+    width: 30%;
     height: auto;
     border-color: #6e492f;
     border-style: solid;
@@ -31,7 +34,7 @@
 }
 
 #ruokaohjeet {
-    width: 40%;
+    width: 70%;
     height: auto;
     border-color: #6e492f;
     border-style: solid;
@@ -42,8 +45,8 @@
 }
 
 #ruokakuva {
-    width: 60%;
-    height: 40vh;
+    width: auto;
+    height: 50vh;
     border-color: #6e492f;
     border-style: solid;
     border-width: 2px;
@@ -68,6 +71,109 @@
     width: 100%;
 }
 
-#ainesosaruudukko tr{
+#ainesosaruudukko tr {
     border-bottom: 1px solid #6e492f;
 }
+
+
+@media (max-width: 1000px) {
+
+    /* Asetetaan flexbox taulukon soluihin */
+    #ruokanimi,
+    #ruokaohjeet,
+    #ruokaainekset,
+    #ruokakuva {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ainesosaruudukko{
+        margin-bottom: 30px;
+    }
+
+    #ruokanimi,
+    #ruokaohjeet,
+    #ruokaainekset {
+        width: 80%;
+        height: auto;
+        border-left: none;
+        /* Poistetaan vasen reuna */
+        border-right: none;
+        /* Poistetaan oikea reuna */
+        border-bottom: 2px solid #6e492f;
+        /* Lisätään alareuna */
+        padding: 10px 30px;
+    }
+
+    #ruokakuva {
+        width: 80%;
+        max-height: 40vh;
+        border-left: none;
+        /* Poistetaan vasen reuna */
+        border-right: none;
+        /* Poistetaan oikea reuna */
+        border-bottom: 2px solid #6e492f;
+        /* Lisätään alareuna */
+        padding: 10px 30px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    #reseptiruudukko {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        width: calc(100% - 100px);
+        border-collapse: collapse;
+    }
+
+    /* Asetetaan flexbox taulukon soluihin */
+    #ruokanimi,
+    #ruokaohjeet,
+    #ruokaainekset,
+    #ruokakuva {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    #ruokanimi,
+    #ruokaohjeet,
+    #ruokaainekset {
+        width: 100%;
+        height: auto;
+        border-left: none;
+        /* Poistetaan vasen reuna */
+        border-right: none;
+        /* Poistetaan oikea reuna */
+        border-bottom: 2px solid #6e492f;
+        /* Lisätään alareuna */
+        padding: 10px 30px;
+    }
+
+    #ruokakuva {
+        width: 100%;
+        max-height: 40vh;
+        border-left: none;
+        /* Poistetaan vasen reuna */
+        border-right: none;
+        /* Poistetaan oikea reuna */
+        border-bottom: 2px solid #6e492f;
+        /* Lisätään alareuna */
+        padding: 10px 30px;
+    }
+
+}
+
+
+
+
+
+
+
+
+

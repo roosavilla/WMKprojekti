@@ -5,6 +5,7 @@
     color: #6e492f;
 }
 
+
 #aamiainen {
     font-size: 2em;
     color: #6e492f;
@@ -84,20 +85,24 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-  
-  .square-text {
-    margin-top: 10px; /* Vaihda tarvittaessa haluttuun välimatkaan ympyrän alapuolella */
+}
+
+.square-text {
+    margin-top: 10px;
+    /* Vaihda tarvittaessa haluttuun välimatkaan ympyrän alapuolella */
     margin-right: 80px;
     text-align: center;
-  }
+}
 
 /* Vieritettävän listan nuolien tyylit*/
 .kategoriat-scroll-buttons {
-    position: absolute; /* Asetetaan absoluuttinen sijainti */
+    position: absolute;
+    /* Asetetaan absoluuttinen sijainti */
     top: calc(50%);
-    transform: translateY(-50%); /* Siirretään ylös 50% suhteessa omaan korkeuteensa */
-    display: none; /* Piilotetaan napit oletuksena */
+    transform: translateY(-50%);
+    /* Siirretään ylös 50% suhteessa omaan korkeuteensa */
+    display: none;
+    /* Piilotetaan napit oletuksena */
 }
 
 /* Vieritettävän listan nuolien tyylit */
@@ -106,17 +111,24 @@
     margin-right: 10px;
     font-size: 60px;
     color: #6e492f;
-    background-color: #fff; /* Taustaväri */
-    border: none; /* Poista reuna */
-    border-radius: 50%; /* Pyöristä reunat */
-    padding: 10px; /* Lisää täytettä napin sisälle */
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Lisää pieni varjo */
+    background-color: #fff;
+    /* Taustaväri */
+    border: none;
+    /* Poista reuna */
+    border-radius: 50%;
+    /* Pyöristä reunat */
+    padding: 10px;
+    /* Lisää täytettä napin sisälle */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    /* Lisää pieni varjo */
 }
 
 @media only screen and (max-width: 1700px) {
     .kategoriat-scroll-buttons {
-        display: flex; /* Asetetaan nappulat näkyviin kun näyttöleveys on alle 1700px */
-        justify-content: space-between; /* Asettaa napit yhtä etäälle toisistaan ja laittaa oikean reunan nappiin flex-end */
+        display: flex;
+        /* Asetetaan nappulat näkyviin kun näyttöleveys on alle 1700px */
+        justify-content: space-between;
+        /* Asettaa napit yhtä etäälle toisistaan ja laittaa oikean reunan nappiin flex-end */
         width: 100%;
     }
 }
@@ -150,13 +162,14 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-      }
-      
-      .square-text {
-        margin-top: 10px; /* Vaihda tarvittaessa haluttuun välimatkaan ympyrän alapuolella */
+    }
+
+    .square-text {
+        margin-top: 10px;
+        /* Vaihda tarvittaessa haluttuun välimatkaan ympyrän alapuolella */
         margin-right: 60px;
         text-align: center;
-      }
+    }
 }
 
 /* Responsiiviset tyylit */
@@ -171,7 +184,20 @@
         height: 150px;
         margin-right: 30px;
     }
-      
+
+}
+
+@media only screen and (max-width: 635px) {
+    h3 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+    
+      h3 span {
+        margin-left: 5px;
+        margin-top: 5px; /* Lisää halutessasi ylimääräistä väliä rivien välille */
+      }
 }
 
 @media only screen and (max-width: 480px) {
@@ -195,7 +221,38 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-      }
+    }
+
+    .square-text {
+        margin-right: 40px;
+    }
+
+
+    .aamupala-container {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+
+    .lounas-container {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .leivonnaiset-container {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .valipala-container {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+
+
+
+
 }
 
 @media only screen and (max-width: 320px) {

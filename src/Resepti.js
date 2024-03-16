@@ -3,18 +3,23 @@ import "./Resepti.css";
 import { FaRegClock } from "react-icons/fa6";
 import { LuChefHat } from "react-icons/lu";
 import { LuSoup } from "react-icons/lu";
+import { useParams } from "react-router-dom";
 import reseptitData from "./db_reseptit.json"; // Tuodaan JSON-tiedosto suoraan importilla
 
-function Resepti() {
+function Resepti({menuOpen}) {
   const [resepti, setResepti] = useState(null);
+  const { recipeId } = useParams(); // Haetaan reitistä recipeId-parametri
+
+  console.log("resepti komponentti, recipeid", recipeId);
 
   useEffect(() => {
     // Asetetaan ensimmäinen resepti komponentin tilaan
-    setResepti(reseptitData.reseptit[0]);
-  }, []);
+    setResepti(reseptitData.reseptit[recipeId]);
+  }, [recipeId]);
+
 
   return (
-    <div>
+    <div className={menuOpen ? "component-hidden" : ""}>
       {resepti && (
         <table id="reseptiruudukko">
           <thead></thead>

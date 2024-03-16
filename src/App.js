@@ -1,22 +1,32 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import Etusivu from "./Etusivu";
 import Kategoriat from "./Kategoriat";
 import Uutiset from "./Uutiset";
 import Tietoa from "./Tietoa";
-import Resepti from "./Resepti";
 import "./App.css";
+import Resepti from "./Resepti";
+import Otayhteytta from "./Otayhteytta";
 
 function App() {
   // Alustetaan tila aktiiviselle kohdalle
-  const [activeNavItem, setActiveNavItem] = useState("ETUSIVU");
+  const [activeNavItem, setActiveNavItem] = useState(localStorage.getItem("activeNavItem") || "ETUSIVU");
   const [menuOpen, setMenuOpen] = useState(false); // Tila hampurilaisvalikon avoimuudelle
 
   // Funktio aktiivisen kohdan asettamiseksi
   const setActiveItem = (itemName) => {
     setActiveNavItem(itemName);
     setMenuOpen(false); // Suljetaan hampurilaisvalikko valinnan jälkeen
+    localStorage.setItem("activeNavItem", itemName);
   };
+
+  useEffect(() => {
+    // Tarkistetaan, onko LocalStoragesta tallennettu aktiivista valintaa ja päivitetään se
+    const storedActiveItem = localStorage.getItem("activeNavItem");
+    if (storedActiveItem) {
+      setActiveNavItem(storedActiveItem);
+    }
+  }, []);
 
   return (
     <Router>
@@ -74,7 +84,9 @@ function App() {
           <Route exact path="/"><Etusivu menuOpen={menuOpen}/></Route>
           <Route path="/kategoriat"><Kategoriat menuOpen={menuOpen}/></Route>
           <Route path="/uutiset"><Uutiset menuOpen={menuOpen}/></Route>
-          <Route path="/tietoa"><Resepti menuOpen={menuOpen}/></Route>
+          <Route path="/tietoa"><Tietoa menuOpen={menuOpen}/></Route>
+          <Route path="/resepti/id=:recipeId"><Resepti menuOpen={menuOpen}/></Route>
+          <Route path="/otayhteytta"><Otayhteytta menuOpen={menuOpen}/></Route>
         </Switch>
       </div>
     </Router>

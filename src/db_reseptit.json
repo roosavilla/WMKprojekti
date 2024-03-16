@@ -1,10 +1,604 @@
 {
     "reseptit": [
         {
-            "nimi": "Muffinit",
+            "id": 0,
+            "nimi": "Avokadoleipä",
+            "kategoria": "aamupala",
+            "aika": "15 min",
+            "kuvaus": "Herkullinen avokadoleipä aamupalaksi",
+            "kuva": "reseptikuvat/avokadoleipa.jpg",
+            "annoskoko": "1 annos",
+            "ainesosat": [
+                {
+                    "maara": "2 viipaletta",
+                    "ainesosa": "tummaa leipää"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "avokado"
+                },
+                {
+                    "maara": "muutama viipale",
+                    "ainesosa": "kirsikkatomaatteja"
+                },
+                {
+                    "maara": "ripaus",
+                    "ainesosa": "suolaa"
+                },
+                {
+                    "maara": "ripaus",
+                    "ainesosa": "mustapippuria"
+                },
+                {
+                    "maara": "1 rkl",
+                    "ainesosa": "oliiviöljyä"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Paahda leipäviipaleet.",
+                "2. Halkaise avokado ja poista kivi.",
+                "3. Levitä avokado leipäviipaleiden päälle ja murskaa haarukalla.",
+                "4. Lisää päälle kirsikkatomaatit.",
+                "5. Mausta suolalla ja mustapippurilla.",
+                "6. Viimeistele oliiviöljyllä.",
+                "7. Nauti herkullinen avokadoleipä aamupalaksi!"
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 1,
+            "nimi": "Bataattiranet",
+            "kategoria": "valipala",
+            "aika": "30 min",
+            "kuvaus": "Rapeat bataattiranet terveelliseksi välipalaksi",
+            "kuva": "reseptikuvat/bataattiranet.jpg",
+            "annoskoko": "2 annosta",
+            "ainesosat": [
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "bataattia"
+                },
+                {
+                    "maara": "2 rkl",
+                    "ainesosa": "oliiviöljyä"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "paprikajauhetta"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "valkosipulijauhetta"
+                },
+                {
+                    "maara": "ripaus",
+                    "ainesosa": "suolaa"
+                },
+                {
+                    "maara": "ripaus",
+                    "ainesosa": "mustapippuria"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Kuori bataatit ja leikkaa ne ohuiksi tikuiksi.",
+                "2. Laita bataattitikut kulhoon ja sekoita niihin oliiviöljy, paprikajauhe, valkosipulijauhe, suola ja pippuri.",
+                "3. Levitä bataattitikut tasaisesti uunipellille.",
+                "4. Paista 200 asteessa noin 25-30 minuuttia, kunnes bataattiranet ovat kullanruskeita ja rapeita.",
+                "5. Nauti herkulliset bataattiranet välipalaksi!"
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 2,
+            "nimi": "Aamupalaleipä",
+            "kategoria": "aamupala",
+            "aika": "20 min",
+            "kuvaus": "Herkullinen aamupalaleipä täynnä makua",
+            "kuva": "reseptikuvat/breakfastleipä.jpeg",
+            "annoskoko": "1 annos",
+            "ainesosat": [
+                {
+                    "maara": "2 viipaletta",
+                    "ainesosa": "vaaleaa pyöreää leipää"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "tomaatti"
+                },
+                {
+                    "maara": "2 viipaletta",
+                    "ainesosa": "paistettua pekonia"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "kananmuna"
+                },
+                {
+                    "maara": "2 viipaletta",
+                    "ainesosa": "cheddarjuustoa"
+                },
+                {
+                    "maara": "haluamasi määrä",
+                    "ainesosa": "salaattia"
+                },
+                {
+                    "maara": "tarvittaessa",
+                    "ainesosa": "voita leivän voiteluun"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Paahda leivänviipaleet.",
+                "2. Leikkaa tomaatista viipaleita ja asettele ne leivän päälle.",
+                "3. Paista pekoni rapeaksi ja aseta se leivälle.",
+                "4. Paista kananmuna haluamallasi tavalla ja aseta se leivälle.",
+                "5. Aseta päälle cheddarjuustoviipaleet ja salaatti.",
+                "6. Peitä toisella leivänviipaleella.",
+                "7. Nauti herkullinen aamupalaleipä täynnä makua!"
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 3,
+            "nimi": "Brownie",
+            "kategoria": "leivonnaiset",
+            "aika": "40 min",
+            "kuvaus": "Herkullisen pähkinäinen suklaabrownie",
+            "kuva": "reseptikuvat/brownie.jpeg",
+            "annoskoko": "8 palaa",
+            "ainesosat": [
+                {
+                    "maara": "200 g",
+                    "ainesosa": "voita"
+                },
+                {
+                    "maara": "200 g",
+                    "ainesosa": "suklaata"
+                },
+                {
+                    "maara": "4 kpl",
+                    "ainesosa": "kananmunia"
+                },
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "sokeria"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "vehnäjauhoja"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "vaniljasokeria"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Sulata voi ja suklaa kattilassa miedolla lämmöllä.",
+                "2. Vatkaa kananmunat ja sokeri vaahdoksi.",
+                "3. Sekoita sulatettu voi-suklaaseos varovasti kananmunavaahdon joukkoon.",
+                "4. Lisää joukkoon vehnäjauhot ja vaniljasokeri.",
+                "5. Kaada taikina leivinpaperilla vuorattuun vuokaan.",
+                "6. Paista 175 asteessa noin 25-30 minuuttia.",
+                "7. Anna jäähtyä ja leikkaa paloiksi."
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 4,
+            "nimi": "Burgeri",
+            "kategoria": "lounas",
+            "aika": "30 min",
+            "kuvaus": "Maukas lihaisa burgeri herkullisilla täytteillä",
+            "kuva": "reseptikuvat/burger.jpg",
+            "annoskoko": "2 annosta",
+            "ainesosat": [
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "hampurilaissämpylää"
+                },
+                {
+                    "maara": "300 g",
+                    "ainesosa": "jauhelihaa"
+                },
+                {
+                    "maara": "4 viipaletta",
+                    "ainesosa": "cheddarjuustoa"
+                },
+                {
+                    "maara": "4 kpl",
+                    "ainesosa": "salaatinlehtiä"
+                },
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "tomaattiviipaletta"
+                },
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "suolakurkkua"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "sipuli"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "majoneesia"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "ketsuppia"
+                },
+                {
+                    "maara": "",
+                    "ainesosa": "suolaa ja mustapippuria maun mukaan"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Paista jauheliha pannulla kypsäksi ja mausta suolalla ja mustapippurilla.",
+                "2. Paista sipulirenkaat ja suolakurkkusiivut pannulla.",
+                "3. Paahda hampurilaissämpylät pannulla tai uunissa.",
+                "4. Levitä hampurilaissämpylän pohjalle majoneesia ja ketsuppia.",
+                "5. Aseta päälle salaatinlehtiä, tomaattiviipaleita ja cheddarjuustoviipaleita.",
+                "6. Lisää päälle paistettu jauheliha, sipulirenkaat ja suolakurkkusiivut.",
+                "7. Peitä toisella hampurilaissämpylällä ja tarjoile heti."
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 5,
+            "nimi": "Burrito",
+            "kategoria": "lounas",
+            "aika": "35 min",
+            "kuvaus": "Meksikolainen burrito herkullisilla täytteillä",
+            "kuva": "reseptikuvat/burrito.jpg",
+            "annoskoko": "4 annosta",
+            "ainesosat": [
+                {
+                    "maara": "4 kpl",
+                    "ainesosa": "tortillaleipää"
+                },
+                {
+                    "maara": "400 g",
+                    "ainesosa": "jauhelihaa"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "paprika"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "sipuli"
+                },
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "juustoraastetta"
+                },
+                {
+                    "maara": "1 prk",
+                    "ainesosa": "kidney-papuja"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "maissia"
+                },
+                {
+                    "maara": "1 prk",
+                    "ainesosa": "tomaattimurskaa"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "chilijauhetta"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "jauhettua juustokuminaa"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Paista jauheliha, sipuli ja paprika pannulla.",
+                "2. Lisää pannulle maissi ja kidney-pavut.",
+                "3. Mausta chilijauheella ja jauhetulla juustokuminalla.",
+                "4. Lämmitä tortillaleivät ja laita täyte niiden päälle.",
+                "5. Ripottele päälle juustoraastetta ja taita burritot.",
+                "6. Kääri burritot tiukasti folioon ja paista uunissa 200 asteessa 10 minuuttia.",
+                "7. Tarjoile burritot heti."
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 6,
+            "nimi": "Suklaahippukeksit",
+            "kategoria": "leivonnaiset",
+            "aika": "20 min",
+            "kuvaus": "Täydellisen pehmeät ja herkulliset suklaahippukeksit, jotka vievät taatusti makeanhimon pois",
+            "kuva": "reseptikuvat/cccookie.jpeg",
+            "annoskoko": "12 keksiä",
+            "ainesosat": [
+                {
+                    "maara": "100 g",
+                    "ainesosa": "voita"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "sokeria"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "fariinisokeria"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "kananmuna"
+                },
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "vehnäjauhoja"
+                },
+                {
+                    "maara": "0.5 tl",
+                    "ainesosa": "leivinjauhetta"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "vaniljasokeria"
+                },
+                {
+                    "maara": "100 g",
+                    "ainesosa": "suklaata rouhittuna"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Vaahdota voi ja sokerit.",
+                "2. Lisää kananmuna ja sekoita hyvin.",
+                "3. Lisää kuivat aineet ja sekoita tasaiseksi taikinaksi.",
+                "4. Lisää suklaarouhe ja sekoita tasaiseksi.",
+                "5. Laita taikinaa ruokalusikallinen kokoisina nokareina leivinpaperilla vuoratulle pellille.",
+                "6. Paista 175 asteessa noin 10-12 minuuttia.",
+                "7. Anna jäähtyä ja nauti!"
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 7,
+            "nimi": "Suklaamuffinit",
+            "kategoria": "leivonnaiset",
+            "aika": "30 min",
+            "kuvaus": "Ihanan pehmeät ja herkulliset kuppikakut",
+            "kuva": "reseptikuvat/cupcake.jpg",
+            "annoskoko": "12 kuppikakkua",
+            "ainesosat": [
+                {
+                    "maara": "2.5 dl",
+                    "ainesosa": "vehnäjauhoja"
+                },
+                {
+                    "maara": "1.5 tl",
+                    "ainesosa": "leivinjauhetta"
+                },
+                {
+                    "maara": "0.5 tl",
+                    "ainesosa": "suolaa"
+                },
+                {
+                    "maara": "0.5 dl",
+                    "ainesosa": "voita"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "sokeria"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "kananmuna"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "vaniljasokeria"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "maitoa"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Sekoita vehnäjauhot, leivinjauhe ja suola.",
+                "2. Vaahdota voi ja sokeri.",
+                "3. Lisää kananmuna ja vaniljasokeri ja sekoita hyvin.",
+                "4. Lisää jauhoseos ja maito vuorotellen taikinaan.",
+                "5. Jaa taikina muffinivuokiin.",
+                "6. Paista 175 asteessa noin 15-18 minuuttia.",
+                "7. Koristele halutessasi esimerkiksi tomusokerilla tai kuorrutteella."
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 8,
+            "nimi": "Dominojuustokakku",
+            "kategoria": "leivonnaiset",
+            "aika": "180 min",
+            "kuvaus": "Raikas ja herkullinen dominojuustokakku",
+            "kuva": "reseptikuvat/dominojuustokakku.jpg",
+            "annoskoko": "10 annosta",
+            "ainesosat": [
+                {
+                    "maara": "200 g",
+                    "ainesosa": "Domino-keksejä"
+                },
+                {
+                    "maara": "75 g",
+                    "ainesosa": "voita"
+                },
+                {
+                    "maara": "500 g",
+                    "ainesosa": "mascarpone-tuorejuustoa"
+                },
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "kermaa"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "sokeria"
+                },
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "munaa"
+                },
+                {
+                    "maara": "100 g",
+                    "ainesosa": "tummaa suklaata"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Murskaa keksit ja sekoita sulatetun voin kanssa.",
+                "2. Painele keksiseos leivinpaperilla vuorattuun vuokaan ja laita jääkaappiin siksi aikaa kun teet täytteen.",
+                "3. Vaahdota kerma ja lisää joukkoon sokeri ja mascarpone-tuorejuusto.",
+                "4. Lisää joukkoon kananmunat yksitellen hyvin sekoittaen.",
+                "5. Kaada täyte keksipohjan päälle ja tasoita pinta.",
+                "6. Sulata suklaa ja valuta se ohuena nauhana kakun pinnalle.",
+                "7. Anna kakun hyytyä jääkaapissa vähintään 3 tuntia tai yön yli."
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 9,
+            "nimi": "Donitsit",
+            "kategoria": "leivonnaiset",
+            "aika": "40 min",
+            "kuvaus": "Mehevät ja herkulliset donitsit",
+            "kuva": "reseptikuvat/donitsit.jpeg",
+            "annoskoko": "12 donitsia",
+            "ainesosat": [
+                {
+                    "maara": "2.5 dl",
+                    "ainesosa": "vehnäjauhoja"
+                },
+                {
+                    "maara": "0.5 dl",
+                    "ainesosa": "sokeria"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "leivinjauhetta"
+                },
+                {
+                    "maara": "0.5 tl",
+                    "ainesosa": "suolaa"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "kananmuna"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "maitoa"
+                },
+                {
+                    "maara": "25 g",
+                    "ainesosa": "voita"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Sekoita kuivat aineet keskenään.",
+                "2. Vatkaa kananmuna ja lisää siihen sulatettu voi ja maito.",
+                "3. Yhdistä kuivat ja kosteat ainekset nopeasti sekoittaen.",
+                "4. Laita taikina pursotinpussiin ja pursota donitsien muotoinen kiekko leivinpaperilla vuoratulle pellille.",
+                "5. Paista 200 asteessa noin 10-12 minuuttia.",
+                "6. Anna jäähtyä ja koristele esimerkiksi tomusokerikuorrutteella tai sokerikuorrutteella."
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 10,
+            "nimi": "Kanariisi",
+            "kategoria": "lounas",
+            "aika": "30 min",
+            "kuvaus": "Herkullinen ja helppo kanariisi arkiruuaksi",
+            "kuva": "reseptikuvat/kanariisi.jpeg",
+            "annoskoko": "4 annosta",
+            "ainesosat": [
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "riisiä"
+                },
+                {
+                    "maara": "300 g",
+                    "ainesosa": "broilerin fileesuikaleita"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "paprika"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "sipuli"
+                },
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "herne-maissi-paprikaa"
+                },
+                {
+                    "maara": "",
+                    "ainesosa": "suolaa ja mustapippuria maun mukaan"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Keitä riisi pakkauksen ohjeen mukaan.",
+                "2. Paista broilerin fileesuikaleet kypsiksi ja mausta suolalla ja mustapippurilla.",
+                "3. Paista paprika- ja sipulisiivut pehmeiksi.",
+                "4. Sekoita kypsä riisi, paistetut broilerin fileesuikaleet ja kasvikset keskenään.",
+                "5. Tarjoile heti."
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 11,
+            "nimi": "Macarons",
+            "kategoria": "leivonnaiset",
+            "aika": "60 min",
+            "kuvaus": "Herkulliset ranskalaiset macaron-leivokset",
+            "kuva": "reseptikuvat/macarons.jpg",
+            "annoskoko": "20 macaronsia",
+            "ainesosat": [
+                {
+                    "maara": "100 g",
+                    "ainesosa": "mantelijauhetta"
+                },
+                {
+                    "maara": "100 g",
+                    "ainesosa": "tomusokeria"
+                },
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "kananmunan valkuaista"
+                },
+                {
+                    "maara": "50 g",
+                    "ainesosa": "sokeria"
+                },
+                {
+                    "maara": "",
+                    "ainesosa": "elintarvikeväriä"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Sekoita mantelijauhe ja tomusokeri keskenään.",
+                "2. Vaahdota kananmunan valkuaiset ja lisää sokeri joukkoon vähitellen.",
+                "3. Yhdistä kuivat ja kosteat ainekset varovasti sekoittaen.",
+                "4. Lisää halutessasi elintarvikeväriä taikinaan.",
+                "5. Pursota taikina leivinpaperille pieniksi kiekoiksi.",
+                "6. Anna macaronien kuivua huoneenlämmössä noin 30 minuuttia.",
+                "7. Paista uunissa 150 asteessa noin 15-18 minuuttia.",
+                "8. Anna jäähtyä ja täytä halutessasi esimerkiksi ganachella tai hillolla."
+            ],
+            "lisayspvm": "2024-03-02"
+        },
+        {
+            "id": 12,
+            "nimi": "Suklaamuffinit",
+            "kategoria": "leivonnaiset",
             "aika": "25 min",
-            "kuvaus": "Herkullisia muffineita",
-            "kuva": "suklaamuffini.jpg",
+            "kuvaus": "Herkullisia ja meheviä suklaamuffineita",
+            "kuva": "reseptikuvat/suklaamuffini.jpg",
             "annoskoko": "12 kpl",
             "ainesosat": [
                 {
@@ -48,13 +642,66 @@
                 "5. Jaa taikina muffinivuokiin.",
                 "6. Paista 200 asteessa noin 15-20 minuuttia."
             ],
-            "lisayspvm": "2024-03-01"
+            "lisayspvm": "2024-03-02"
         },
         {
-            "nimi": "Pasta Carbonara",
+            "id": 13,
+            "nimi": "Pannukakut",
+            "kategoria": "aamupala",
             "aika": "30 min",
-            "kuvaus": "Herkullinen pasta Carbonara",
-            "kuva": "suklaamuffini.jpg",
+            "kuvaus": "Mehevä pannukakku herkkusilla täytteillä",
+            "kuva": "reseptikuvat/pannukakku.jpeg",
+            "annoskoko": "4 annosta",
+            "ainesosat": [
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "vehnäjauhoja"
+                },
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "maitoa"
+                },
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "kananmunaa"
+                },
+                {
+                    "maara": "2 rkl",
+                    "ainesosa": "sokeria"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "vaniljasokeria"
+                },
+                {
+                    "maara": "50 g",
+                    "ainesosa": "voita"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "mansikkahilloa"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "kermavaahtoa"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Sekoita kuivat aineet keskenään.",
+                "2. Lisää maito, kananmunat, sokeri ja sulatettu voi joukkoon.",
+                "3. Sekoita tasaiseksi taikinaksi.",
+                "4. Paista pannukakku lettupannulla molemmin puolin kullanruskeaksi.",
+                "5. Tarjoile mansikkahillon ja kermavaahdon kanssa."
+            ],
+            "lisayspvm": "2024-03-03"
+        },
+        {
+            "id": 14,
+            "nimi": "Pestopasta",
+            "kategoria": "lounas",
+            "aika": "20 min",
+            "kuvaus": "Raikkaan yrttinen tuorepestopasta",
+            "kuva": "reseptikuvat/pasta.jpg",
             "annoskoko": "4 annosta",
             "ainesosat": [
                 {
@@ -62,16 +709,108 @@
                     "ainesosa": "spagettia"
                 },
                 {
-                    "maara": "150 g",
-                    "ainesosa": "pekonia"
+                    "maara": "1 dl",
+                    "ainesosa": "oliiviöljyä"
                 },
                 {
-                    "maara": "2 kpl",
-                    "ainesosa": "kananmunia"
+                    "maara": "4 kpl",
+                    "ainesosa": "valkosipulinkynttä"
+                },
+                {
+                    "maara": "500 g",
+                    "ainesosa": "kirsikkatomaatteja"
                 },
                 {
                     "maara": "1 dl",
-                    "ainesosa": "parmesaanijuustoa raastettuna"
+                    "ainesosa": "tuoretta basilikaa"
+                },
+                {
+                    "maara": "100 g",
+                    "ainesosa": "parmesaanijuustoa"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Keitä pasta suolalla maustetussa vedessä kypsäksi.",
+                "2. Kuumenna oliiviöljy pannulla ja lisää hienonnetut valkosipulinkynnet.",
+                "3. Lisää pilkotut kirsikkatomaatit pannulle ja hauduta hetki.",
+                "4. Lisää keitetty pasta pannulle ja sekoita joukkoon tuore basilika.",
+                "5. Raasta parmesaanijuusto pastaan ja sekoita hyvin.",
+                "6. Tarjoile heti."
+            ],
+            "lisayspvm": "2024-03-03"
+        },
+        {
+            "id": 15,
+            "nimi": "Tomaattipasta",
+            "kategoria": "lounas",
+            "aika": "25 min",
+            "kuvaus": "Klassinen pastaresepti tomaattikastikkeella",
+            "kuva": "reseptikuvat/pasta1.jpeg",
+            "annoskoko": "4 annosta",
+            "ainesosat": [
+                {
+                    "maara": "400 g",
+                    "ainesosa": "pastaa"
+                },
+                {
+                    "maara": "1 rkl",
+                    "ainesosa": "oliiviöljyä"
+                },
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "valkosipulinkynttä"
+                },
+                {
+                    "maara": "800 g",
+                    "ainesosa": "tomattimurskaa"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "tuoretta basilikaa"
+                },
+                {
+                    "maara": "",
+                    "ainesosa": "suolaa ja mustapippuria maun mukaan"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Keitä pasta suolalla maustetussa vedessä kypsäksi.",
+                "2. Kuumenna oliiviöljy pannulla ja lisää hienonnetut valkosipulinkynnet.",
+                "3. Lisää tomattimurska pannulle ja hauduta hetki.",
+                "4. Mausta kastike tuoreella basilikalla, suolalla ja mustapippurilla.",
+                "5. Sekoita keitetty pasta kastikkeen joukkoon.",
+                "6. Tarjoile heti."
+            ],
+            "lisayspvm": "2024-03-03"
+        },
+        {
+            "id": 16,
+            "nimi": "Pekonipasta",
+            "kategoria": "lounas",
+            "aika": "30 min",
+            "kuvaus": "Täyteläisen juustoinen ja kermainen pekonipasta",
+            "kuva": "reseptikuvat/pasta2.jpeg",
+            "annoskoko": "4 annosta",
+            "ainesosat": [
+                {
+                    "maara": "400 g",
+                    "ainesosa": "pennepastaa"
+                },
+                {
+                    "maara": "1 rkl",
+                    "ainesosa": "oliiviöljyä"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "sipuli"
+                },
+                {
+                    "maara": "200 g",
+                    "ainesosa": "pekoniviipaleita"
+                },
+                {
+                    "maara": "100 g",
+                    "ainesosa": "parmesaanijuustoa"
                 },
                 {
                     "maara": "1 dl",
@@ -82,20 +821,256 @@
                     "ainesosa": "suolaa ja mustapippuria maun mukaan"
                 },
                 {
-                    "maara": "1 rkl",
-                    "ainesosa": "oliiviöljyä"
+                    "maara": "1 dl",
+                    "ainesosa": "tuoretta basilikaa"
                 }
             ],
             "valmistusohjeet": [
                 "1. Keitä pasta suolalla maustetussa vedessä kypsäksi.",
-                "2. Paista pekoni rapeaksi ja nosta talouspaperin päälle valumaan.",
-                "3. Vatkaa kananmunat kulhossa, lisää joukkoon raastettu parmesaanijuusto ja kerma.",
-                "4. Valuta pasta ja sekoita joukkoon kananmunaseos.",
-                "5. Lisää paistettu pekoni ja sekoita hyvin.",
-                "6. Mausta suolalla ja mustapippurilla.",
-                "7. Tarjoile heti."
+                "2. Kuumenna oliiviöljy pannulla ja lisää hienonnettu sipuli.",
+                "3. Lisää pekoniviipaleet pannulle ja paista rapeaksi.",
+                "4. Lisää kerma ja juustoraaste pannulle ja hauduta hetki.",
+                "5. Mausta kastike suolalla ja mustapippurilla.",
+                "6. Sekoita keitetty pasta kastikkeen joukkoon.",
+                "7. Tarjoile tuoreen basilikan kanssa."
             ],
-            "lisayspvm": "2024-03-01"
+            "lisayspvm": "2024-03-03"
+        },
+        {
+            "id": 17,
+            "nimi": "Proteiinimousse",
+            "kategoria": "valipala",
+            "aika": "15 min",
+            "kuvaus": "Herkullinen ja terveellinen proteiinimousse",
+            "kuva": "reseptikuvat/proteiinimousse.jpeg",
+            "annoskoko": "4 annosta",
+            "ainesosat": [
+                {
+                    "maara": "300 g",
+                    "ainesosa": "mascarponejuustoa"
+                },
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "maustamatonta jugurttia"
+                },
+                {
+                    "maara": "2 rkl",
+                    "ainesosa": "hunajaa"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "vaniljauutetta"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "proteiinijauhetta"
+                },
+                {
+                    "maara": "",
+                    "ainesosa": "marjoja ja pähkinöitä koristeluun"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Sekoita mascarponejuusto, jugurtti, hunaja ja vaniljauute keskenään.",
+                "2. Lisää joukkoon proteiinijauhe ja sekoita tasaiseksi massaksi.",
+                "3. Jaa mousse annoskulhoihin ja laita jääkaappiin tekeytymään vähintään tunniksi.",
+                "4. Koristele marjoilla ja pähkinöillä ennen tarjoilua."
+            ],
+            "lisayspvm": "2024-03-03"
+        },
+        {
+            "id": 18,
+            "nimi": "Proteiinivohvelit",
+            "kategoria": "aamupala",
+            "aika": "20 min",
+            "kuvaus": "Herkulliset proteiinivohvelit mansikoilla ja nutellalla",
+            "kuva": "reseptikuvat/proteiinivohvelit.jpg",
+            "annoskoko": "2 kpl",
+            "ainesosat": [
+                {
+                    "maara": "200 g",
+                    "ainesosa": "proteiinivanukasta"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "vehnäjauhoja"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "kananmuna"
+                },
+                {
+                    "maara": "",
+                    "ainesosa": "mansikoita ja nutellaa päälle"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Sekoita proteiinivanukas, vehnäjauhoja ja kananmuna keskenään.",
+                "2. Voitele vohvelirauta ja kaada taikina siihen.",
+                "3. Paista vohvelit kullanruskeiksi.",
+                "4. Voitele valmiit vohvelit nutellalla ja lisää päälle mansikoita."
+            ],
+            "lisayspvm": "2024-03-03"
+        },
+        {
+            "id": 19,
+            "nimi": "Smoothie",
+            "kategoria": "aamupala",
+            "aika": "10 min",
+            "kuvaus": "Raikas ja terveellinen smoothie",
+            "kuva": "reseptikuvat/smoothie.jpg",
+            "annoskoko": "2 annosta",
+            "ainesosat": [
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "banaania"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "mansikoita"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "luonnonjugurttia"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "appelsiinimehua"
+                },
+                {
+                    "maara": "1 rkl",
+                    "ainesosa": "hunajaa"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "jäämurskaa"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Laita kaikki ainekset blenderiin.",
+                "2. Sekoita tasaiseksi ja tarjoile heti."
+            ],
+            "lisayspvm": "2024-03-03"
+        },
+        {
+            "id": 20,
+            "nimi": "Omenapiirakka",
+            "kategoria": "leivonnaiset",
+            "aika": "50 min",
+            "kuvaus": "Mehukas omenapiirakka kanelilla",
+            "kuva": "reseptikuvat/omenapiirakka.jpeg",
+            "annoskoko": "8 annosta",
+            "ainesosat": [
+                {
+                    "maara": "4 kpl",
+                    "ainesosa": "omenaa"
+                },
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "vehnäjauhoja"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "sokeria"
+                },
+                {
+                    "maara": "100 g",
+                    "ainesosa": "voita"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "vaniljasokeria"
+                },
+                {
+                    "maara": "1 tl",
+                    "ainesosa": "kanelia"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Kuori ja viipaloi omenat.",
+                "2. Sekoita jauhot, sokeri, sulatettu voi, vaniljasokeri ja kaneli.",
+                "3. Laita puolet taikinasta voideltuun vuokaan.",
+                "4. Lado omenaviipaleet taikinan päälle.",
+                "5. Ripottele loput taikinasta omenoiden päälle.",
+                "6. Paista 200 asteessa noin 30-40 minuuttia."
+            ],
+            "lisayspvm": "2024-03-03"
+        },
+        {
+            "id": 21,
+            "nimi": "Smoothiebowl",
+            "kategoria": "aamupala",
+            "aika": "10 min",
+            "kuvaus": "Täyttävä ja herkullinen smoothiebowl",
+            "kuva": "reseptikuvat/smoothiebowl.jpeg",
+            "annoskoko": "2 annosta",
+            "ainesosat": [
+                {
+                    "maara": "2 kpl",
+                    "ainesosa": "banaania"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "pakastemarjoja"
+                },
+                {
+                    "maara": "2 dl",
+                    "ainesosa": "luonnonjugurttia"
+                },
+                {
+                    "maara": "1 dl",
+                    "ainesosa": "maitoa"
+                },
+                {
+                    "maara": "1 rkl",
+                    "ainesosa": "hunajaa"
+                },
+                {
+                    "maara": "",
+                    "ainesosa": "marjoja ja pähkinöitä päälle"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Laita kaikki ainekset blenderiin.",
+                "2. Sekoita tasaiseksi ja kaada kulhoon.",
+                "3. Koristele marjoilla ja pähkinöillä."
+            ],
+            "lisayspvm": "2024-03-03"
+        },
+        {
+            "id": 22,
+            "nimi": "Täytetty croissant",
+            "kategoria": "aamupala",
+            "aika": "25 min",
+            "kuvaus": "Herkulliset täytetyt croissantit",
+            "kuva": "reseptikuvat/stuffedcroissant.jpg",
+            "annoskoko": "4 kpl",
+            "ainesosat": [
+                {
+                    "maara": "1 pkt",
+                    "ainesosa": "lehtitaikinaa"
+                },
+                {
+                    "maara": "100 g",
+                    "ainesosa": "kinkkua"
+                },
+                {
+                    "maara": "100 g",
+                    "ainesosa": "juustoa"
+                },
+                {
+                    "maara": "1 kpl",
+                    "ainesosa": "kananmuna"
+                }
+            ],
+            "valmistusohjeet": [
+                "1. Leikkaa lehtitaikina suikaleiksi ja leikkaa kinkku ja juusto paloiksi.",
+                "2. Laita täytteet taikinan päälle ja kääri croissantiksi.",
+                "3. Voitele kananmunalla ja paista 200 asteessa noin 15 minuuttia."
+            ],
+            "lisayspvm": "2024-03-03"
         }
+
+        
     ]
 }
