@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/WMKprojekti/static/css/main.841c2ffd.css",
-    "main.js": "/WMKprojekti/static/js/main.286dd573.js",
+    "main.js": "/WMKprojekti/static/js/main.123acecb.js",
     "static/js/592.5eb7f504.chunk.js": "/WMKprojekti/static/js/592.5eb7f504.chunk.js",
     "static/media/pasta.jpg": "/WMKprojekti/static/media/pasta.5cd3d2d2bb4b915639f5.jpg",
     "static/media/bataattiranet.jpg": "/WMKprojekti/static/media/bataattiranet.53fd248b73da8ab10ba1.jpg",
@@ -34,11 +34,11 @@
     "static/media/index.cjs": "/WMKprojekti/static/media/index.671993152dc0f6e0b17a.cjs",
     "index.html": "/WMKprojekti/index.html",
     "main.841c2ffd.css.map": "/WMKprojekti/static/css/main.841c2ffd.css.map",
-    "main.286dd573.js.map": "/WMKprojekti/static/js/main.286dd573.js.map",
+    "main.123acecb.js.map": "/WMKprojekti/static/js/main.123acecb.js.map",
     "592.5eb7f504.chunk.js.map": "/WMKprojekti/static/js/592.5eb7f504.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.841c2ffd.css",
-    "static/js/main.286dd573.js"
+    "static/js/main.123acecb.js"
   ]
 }
