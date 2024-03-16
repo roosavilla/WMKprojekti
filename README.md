@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Overview
 
-This project was made as a final project to Web- and mobileuserfaces course. The project is a recipe site where users can view my favorite recipes (now it is just a template, not the real recipes or pics).
+This project was developed as a final project to Web and Mobile User Interfaces course. The project is a recipe site where users can view my favorite recipes (now it is just a template, not the real recipes or pics).
 
 ## Available Scripts
 
