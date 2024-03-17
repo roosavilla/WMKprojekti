@@ -21,14 +21,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
     z-index: 1;
+
 }
+
 
 /* Otsikon tyylit */
 #etusivu {
     font-size: 4em;
-    -webkit-text-stroke: 2px #4A301E;
+    color: #4A301E;
+    -webkit-text-stroke: 1px white;
     /* width and color */
     /* Päivitetty fonttikoko */
 }
@@ -42,7 +44,7 @@ h3 {
 
 .text-container {
     position: absolute;
-    top: 50%;
+    top: 55%;
     /* Aseta sivun yläreuna 50%:iin näytön korkeudesta */
     left: 50%;
     /* Aseta sivun vasen reuna 50%:iin näytön leveydestä */
@@ -53,29 +55,38 @@ h3 {
     height: auto;
     /* Varmista, että korkeus mukautuu sisällön mukaan */
     z-index: 1;
+    padding: 10px;
+    /* Yleinen padding kaikille sivuille */
+    padding-top: 0;
+    /* Erikoispadding ylös */
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    /* 20 pikselin pyöristetyt reunat */
+    text-align: center;
+    /* Teksti keskitetään */
 }
 
 /* Tekstin tyylit */
 .text {
-    -webkit-text-stroke: 1px #4A301E;
-    color: white;
+    color: #4A301E;
+    /* Ruskea teksti */
     text-align: center;
 }
 
-
-
 /* Tekstikentän tyylit */
 input[type="text"] {
-    width: 100%;
+    width: 80%;
     height: 50%;
-    border: none;
+    border: 1px solid #4A301E;
     font-size: 1.2em;
     border-radius: 20px;
+    margin: 0 auto;
+    /* Keskitetään vaakasuunnassa */
 }
 
 /* Uusimpien reseptien osion tyylit */
 .reseptit-container {
-    margin-left: 50px;
+    margin-left: 20px;
     margin-right: 20px;
     color: #6e492f;
     position: relative;
@@ -83,7 +94,6 @@ input[type="text"] {
 
 /* Ympyröiden tyylit */
 .circle-container {
-    margin-right: 20px;
     display: flex;
     overflow-x: hidden;
     white-space: nowrap;
@@ -135,7 +145,10 @@ input[type="text"] {
     display: inline-block;
     vertical-align: middle;
     margin: 0;
+    width: "100%"
 }
+
+
 
 #etusivunnappulat {
     display: flex;
@@ -145,8 +158,8 @@ input[type="text"] {
 }
 
 .nice-button {
-    background-color: white;
-    color: #6e492f;
+    background-color: #6e492f;
+    color: white;
     border: 1px solid #6e492f;
     border-radius: 5px;
     padding: 10px 20px;
@@ -155,12 +168,20 @@ input[type="text"] {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .nice-button:hover {
     background-color: #4a301e;
     color: white;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.etusivu-nappidivi {
+    width: 50px;
+    height: 200px;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -218,6 +239,13 @@ input[type="text"] {
         flex-shrink: 0;
     }
 
+    .etusivu-nappidivi {
+        width: 50px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+    }
+
     .circle-with-text {
         display: flex;
         flex-direction: column;
@@ -233,16 +261,20 @@ input[type="text"] {
     }
 }
 
+@media only screen and (max-width: 1024px) {
+
+    .etusivu-nappidivi {
+        display: none;
+    }
+
+}
+
 /* Responsiiviset tyylit */
 @media only screen and (max-width: 768px) {
 
     /* Tekstin koko pienemmälle näytölle */
     .text-container {
         width: 70%;
-    }
-
-    .text {
-        -webkit-text-stroke: 0.9px #4A301E;
     }
 
     #etusivu {
@@ -265,13 +297,17 @@ input[type="text"] {
     .no-results {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* Keskitä sisältö vaakasuunnassa */
+        text-align: center;
+        /* Keskitä tekstit */
     }
 
     .no-results p {
         margin-top: 10px;
         /* Lisää tilaa yläpuolelle */
         margin-bottom: 20px;
-        /* Lisää tilaa alapuolelle */
     }
 
     #surunaama {
@@ -359,7 +395,7 @@ input[type="text"] {
 
     .text-container {
         position: absolute;
-        top: 50%;
+        top: 60%;
         /* Aseta sivun yläreuna 50%:iin näytön korkeudesta */
         left: 50%;
         /* Aseta sivun vasen reuna 50%:iin näytön leveydestä */
@@ -384,7 +420,7 @@ input[type="text"] {
         /* Aseta sivun vasen reuna 50%:iin näytön leveydestä */
         transform: translate(-50%, -50%);
         /* Keskitä elementti sekä vaaka- että pystysuunnassa */
-        width: 70%;
+        width: 80%;
         /* Aseta leveys halutuksi */
         height: auto;
         /* Varmista, että korkeus mukautuu sisällön mukaan */

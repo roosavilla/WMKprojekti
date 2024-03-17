@@ -8,7 +8,8 @@
     background-image: url('suklaa.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    background-attachment: fixed; /* Kiinnitä taustakuva näyttöön */
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -87,7 +88,7 @@
 .ota-yhteytta-lomake {
     display: flex;
     flex-direction: column;
-    margin-left: 25px;
+    margin-left: 35px;
     margin-right: 50px;
 }
 
@@ -225,7 +226,7 @@
         margin-right: auto;
         margin-bottom: 30px;
         margin-top: 30px;
-        max-width: 1100px;
+        width: 90%;
         border-collapse: separate;
     }
 
@@ -259,7 +260,7 @@
         margin-right: auto;
         margin-bottom: 20px;
         margin-top: 20px;
-        max-width: 500px;
+        max-width: 600px;
         border-collapse: separate;
     }
 
@@ -311,7 +312,7 @@
     }
 
     #tietoa-table {
-        margin-left: -20px;
+        margin-left: auto;
         margin-right: auto;
         margin-bottom: 10px;
         margin-top: 10px;
@@ -349,7 +350,7 @@
     }
 
     .ota-yhteytta-lomake {
-        margin-left: 0px;
+        margin-left: 15px;
         margin-right: 25px;
     }
 
@@ -368,14 +369,17 @@
 
 @media (max-width: 380px) {
 
-    #tietoa-table td:nth-child(even) {
-        width: 100%;
-        min-width: 250px;
-        height: auto;
+    #tietoa-table {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: calc(100% - 10px); /* Näytön leveys vähennettynä marginaaleista */
+        width: 100%; /* Taulukon leveys ei ole enää kiinteä */
     }
 
-    #tietoa-table{
-        margin-top: 5px;
-        margin-bottom: 5px;
+    #tietoa-table td:nth-child(even) {
+        width: 100%;
+        min-width: 150px;
+        max-width: 100%;
+        height: auto;
     }
 }

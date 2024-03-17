@@ -2,7 +2,6 @@ import "./Kategoriat.css";
 import React, { useRef, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import db_reseptit from "./db_reseptit.json";
-
 const Kategoriat = ({ menuOpen }) => {
   const [scrollPositions, setScrollPositions] = useState({
     aamupala: 0,
@@ -22,106 +21,139 @@ const Kategoriat = ({ menuOpen }) => {
   const containerStartTouchX = useRef(0);
   const containerStartMouseX = useRef(0);
   const scrollStepFactor = 1; // Adjust this factor as needed
+  const [isMobile, setIsMobile] = useState(false);
+  const [showLeftButton, setShowLeftButton] = useState(false);
+  const [showRightButton, setShowRightButton] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0); // Skrollaa sivu ylös, kun komponentti latautuu
   }, []); // Tyhjä riippuvuuslista varmistaa, että tämä suoritetaan vain kerran, kun komponentti latautuu
 
   useEffect(() => {
-    const handleTouchStart = (event, category) => {
-      const touch = event.touches[0];
-      containerStartTouchX.current = touch.clientX;
-      containerStartScrollLeft.current =
-        squareContainerRefs[category].current.scrollLeft;
-      activeContainerRef.current = category;
-    };
-
-    const handleTouchMove = (event) => {
-      const touch = event.touches[0];
-      const touchDeltaX = touch.clientX - containerStartTouchX.current;
-      const containerDeltaX = touchDeltaX * scrollStepFactor;
-      const newScrollLeft = containerStartScrollLeft.current - containerDeltaX;
-    
-      // Tarkistetaan, ettei uusi sijainti mene containerin ulkopuolelle
-      const containerWidth = squareContainerRefs[activeContainerRef.current].current.clientWidth;
-      const maxScrollLeft = squareContainerRefs[activeContainerRef.current].current.scrollWidth - containerWidth;
-      if (newScrollLeft >= 0 && newScrollLeft <= maxScrollLeft) {
-        squareContainerRefs[activeContainerRef.current].current.scrollLeft = newScrollLeft;
-        setScrollPositions((prevState) => ({
-          ...prevState,
-          [activeContainerRef.current]: newScrollLeft,
-        }));
+    const handleResize = () => {
+      if (window.innerWidth <= 1024) {
+        setIsMobile(false);
+        console.log("mobiililaite");
+      } else {
+        setIsMobile(true);
+        console.log("tietokone");
       }
     };
 
-    const handleTouchEnd = () => {
-      containerStartTouchX.current = null;
-      activeContainerRef.current = null;
-    };
+    // Kutsutaan kerran alussa ja lisätään tapahtumakuuntelija näyttöleveyden muutoksille
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-    const handleMouseDown = (event, category) => {
-      containerStartMouseX.current = event.clientX;
-      containerStartScrollLeft.current =
-        squareContainerRefs[category].current.scrollLeft;
-      activeContainerRef.current = category;
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
-    };
+    // Poistetaan tapahtumakuuntelija komponentin purkautuessa
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Tyhjä taulukko varmistaa, että useEffect suoritetaan vain kerran
 
-    const handleMouseMove = (event) => {
-      const mouseDeltaX = event.clientX - containerStartMouseX.current;
-      const containerDeltaX = mouseDeltaX * scrollStepFactor;
-      const newScrollLeft = containerStartScrollLeft.current - containerDeltaX;
-    
-      // Tarkistetaan, ettei uusi sijainti mene containerin ulkopuolelle
-      const containerWidth = squareContainerRefs[activeContainerRef.current].current.clientWidth;
-      const maxScrollLeft = squareContainerRefs[activeContainerRef.current].current.scrollWidth - containerWidth;
-      if (newScrollLeft >= 0 && newScrollLeft <= maxScrollLeft) {
-        squareContainerRefs[activeContainerRef.current].current.scrollLeft = newScrollLeft;
-        setScrollPositions((prevState) => ({
-          ...prevState,
-          [activeContainerRef.current]: newScrollLeft,
-        }));
-      }
-    };
-    
-
-    const handleMouseUp = () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
-      activeContainerRef.current = null;
-    };
-
-    Object.keys(squareContainerRefs).forEach((category) => {
-      const container = squareContainerRefs[category].current;
-      if (container) {
-        container.addEventListener("touchstart", (e) =>
-          handleTouchStart(e, category)
-        );
-        container.addEventListener("touchmove", handleTouchMove);
-        container.addEventListener("touchend", handleTouchEnd);
-        container.addEventListener("mousedown", (e) =>
-          handleMouseDown(e, category)
-        );
-      }
-    });
-
-    return () => {
+  useEffect(() => {
+    const updateButtons = () => {
       Object.keys(squareContainerRefs).forEach((category) => {
         const container = squareContainerRefs[category].current;
         if (container) {
-          container.removeEventListener("touchstart", (e) =>
-            handleTouchStart(e, category)
-          );
-          container.removeEventListener("touchmove", handleTouchMove);
-          container.removeEventListener("touchend", handleTouchEnd);
-          container.removeEventListener("mousedown", (e) =>
-            handleMouseDown(e, category)
-          );
+          const scrollableWidth = container.scrollWidth - container.clientWidth;
+
+          // Siirrä tilan päivitys tästä pois
+          // setScrollPositions((prevState) => ({
+          //   ...prevState,
+          //   [category]: container.scrollLeft,
+          // }));
+
+          // Tarkista, jos scrollaus on äärirajoilla ja päivitä nappejen näkyvyys sen mukaan
+          setShowLeftButton((prev) => ({
+            ...prev,
+            [category]: container.scrollLeft > 0,
+          }));
+          setShowRightButton((prev) => ({
+            ...prev,
+            [category]: container.scrollLeft < scrollableWidth,
+          }));
         }
       });
     };
-  }, []);
+
+    const handleResize = () => {
+      updateButtons();
+    };
+
+    window.addEventListener("resize", handleResize);
+    updateButtons();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Tyhjä riippuvuuslista, jotta tämä useEffect suoritetaan vain kerran alussa
+
+  const handleTouchStart = (event, category) => {
+    const touch = event.touches[0];
+    containerStartTouchX.current = touch.clientX;
+    containerStartScrollLeft.current =
+      squareContainerRefs[category].current.scrollLeft;
+    activeContainerRef.current = category;
+  };
+
+  const handleTouchMove = (event) => {
+    const touch = event.touches[0];
+    const touchDeltaX = touch.clientX - containerStartTouchX.current;
+    const containerDeltaX = touchDeltaX * scrollStepFactor;
+    const newScrollLeft = containerStartScrollLeft.current - containerDeltaX;
+
+    // Tarkistetaan, ettei uusi sijainti mene containerin ulkopuolelle
+    const containerWidth =
+      squareContainerRefs[activeContainerRef.current].current.clientWidth;
+    const maxScrollLeft =
+      squareContainerRefs[activeContainerRef.current].current.scrollWidth -
+      containerWidth;
+    if (newScrollLeft >= 0 && newScrollLeft <= maxScrollLeft) {
+      squareContainerRefs[activeContainerRef.current].current.scrollLeft =
+        newScrollLeft;
+      setScrollPositions((prevState) => ({
+        ...prevState,
+        [activeContainerRef.current]: newScrollLeft,
+      }));
+    }
+  };
+
+  const handleTouchEnd = () => {
+    containerStartTouchX.current = null;
+    activeContainerRef.current = null;
+  };
+
+  const handleMouseDown = (event, category) => {
+    containerStartMouseX.current = event.clientX;
+    containerStartScrollLeft.current =
+      squareContainerRefs[category].current.scrollLeft;
+    activeContainerRef.current = category;
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+  };
+
+  const handleMouseMove = (event) => {
+    const mouseDeltaX = event.clientX - containerStartMouseX.current;
+    const containerDeltaX = mouseDeltaX * scrollStepFactor;
+    const newScrollLeft = containerStartScrollLeft.current - containerDeltaX;
+
+    // Tarkistetaan, ettei uusi sijainti mene containerin ulkopuolelle
+    const containerWidth =
+      squareContainerRefs[activeContainerRef.current].current.clientWidth;
+    const maxScrollLeft =
+      squareContainerRefs[activeContainerRef.current].current.scrollWidth -
+      containerWidth;
+    if (newScrollLeft >= 0 && newScrollLeft <= maxScrollLeft) {
+      squareContainerRefs[activeContainerRef.current].current.scrollLeft =
+        newScrollLeft;
+      setScrollPositions((prevState) => ({
+        ...prevState,
+        [activeContainerRef.current]: newScrollLeft,
+      }));
+    }
+  };
+
+  const handleMouseUp = () => {
+    window.removeEventListener("mousemove", handleMouseMove);
+    window.removeEventListener("mouseup", handleMouseUp);
+    activeContainerRef.current = null;
+  };
 
   const showRecipe = (recipeId) => {
     history.push(`/resepti/id=${recipeId}`);
@@ -145,28 +177,120 @@ const Kategoriat = ({ menuOpen }) => {
     }
   };
 
+  const scrollLeft = (category) => {
+    if (squareContainerRefs[category].current) {
+      const container = squareContainerRefs[category].current;
+      const scrollableWidth = container.scrollWidth - container.clientWidth;
+      container.scrollLeft -= 100; // Adjust scroll amount as needed
+      if (container.scrollLeft === 0) {
+        setShowLeftButton((prev) => ({
+          ...prev,
+          [category]: false,
+        }));
+        setShowRightButton((prev) => ({
+          ...prev,
+          [category]: true,
+        }));
+      } else {
+        setShowLeftButton((prev) => ({
+          ...prev,
+          [category]: true,
+        }));
+        setShowRightButton((prev) => ({
+          ...prev,
+          [category]: true,
+        }));
+      }
+    }
+  };
+
+  const scrollRight = (category) => {
+    if (squareContainerRefs[category].current) {
+      const container = squareContainerRefs[category].current;
+      const scrollableWidth = container.scrollWidth - container.clientWidth;
+      container.scrollLeft += 100; // Adjust scroll amount as needed
+      if (container.scrollLeft === scrollableWidth) {
+        setShowLeftButton((prev) => ({
+          ...prev,
+          [category]: true,
+        }));
+        setShowRightButton((prev) => ({
+          ...prev,
+          [category]: false,
+        }));
+      } else {
+        setShowLeftButton((prev) => ({
+          ...prev,
+          [category]: true,
+        }));
+        setShowRightButton((prev) => ({
+          ...prev,
+          [category]: true,
+        }));
+      }
+    }
+  };
+
   return (
     <div className={menuOpen ? "component-hidden" : ""}>
       <h1 id="otsikko">Kategoriat</h1>
       {Object.keys(scrollPositions).map((category, index) => (
         <div key={index} className={`${category}-container`}>
           <h3>{getCategoryTitle(category)} </h3>
-          <div className="square-container" ref={squareContainerRefs[category]}>
-            {db_reseptit.reseptit
-              .filter((recipe) => recipe.kategoria === category)
-              .map((recipe, index) => (
-                <div key={index} className="square-with-text">
-                  <button
-                    className="square"
-                    style={{
-                      backgroundImage: `url(${require(`./${recipe.kuva}`)})`,
-                      backgroundSize: "cover",
-                    }}
-                    onClick={() => showRecipe(recipe.id)}
-                  ></button>
-                  <div className="square-text">{recipe.nimi}</div>
-                </div>
-              ))}
+          <div
+            id="napitjaympyrat-etusivu"
+            style={{ display: "flex", flexDirection: "row" }}
+          >
+            <div className="etusivu-nappidivi">
+              <button
+                className="nice-button"
+                style={{
+                  visibility:
+                    showLeftButton[category] && isMobile ? "visible" : "hidden",
+                }}
+                onClick={() => scrollLeft(category)}
+              >
+                <b>{"<"}</b>
+              </button>
+            </div>
+            <div
+              className="square-container"
+              ref={squareContainerRefs[category]}
+              onTouchStart={(event) => handleTouchStart(event, category)}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              onMouseDown={(event) => handleMouseDown(event, category)}
+            >
+              {db_reseptit.reseptit
+                .filter((recipe) => recipe.kategoria === category)
+                .map((recipe, index) => (
+                  <div key={index} className="square-with-text">
+                    <button
+                      className="square"
+                      style={{
+                        backgroundImage: `url(${require(`./${recipe.kuva}`)})`,
+                        backgroundSize: "cover",
+                      }}
+                      onClick={() => showRecipe(recipe.id)}
+                    ></button>
+                    <div className="square-text">{recipe.nimi}</div>
+                  </div>
+                ))}
+            </div>
+            <div className="etusivu-nappidivi">
+              <button
+                className="nice-button"
+                style={{
+                  visibility:
+                    showRightButton[category] && isMobile
+                      ? "visible"
+                      : "hidden",
+                }}
+                onClick={() => scrollRight(category)}
+              >
+                <b>{">"}</b>
+              </button>
+            </div>
           </div>
         </div>
       ))}
