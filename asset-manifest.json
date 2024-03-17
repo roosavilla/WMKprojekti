@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/WMKprojekti/static/css/main.e14e2bd1.css",
-    "main.js": "/WMKprojekti/static/js/main.d24b4315.js",
+    "main.css": "/WMKprojekti/static/css/main.0f1735ce.css",
+    "main.js": "/WMKprojekti/static/js/main.d9e2a375.js",
     "static/js/592.5eb7f504.chunk.js": "/WMKprojekti/static/js/592.5eb7f504.chunk.js",
     "static/media/pasta.jpg": "/WMKprojekti/static/media/pasta.5cd3d2d2bb4b915639f5.jpg",
     "static/media/bataattiranet.jpg": "/WMKprojekti/static/media/bataattiranet.53fd248b73da8ab10ba1.jpg",
@@ -33,12 +33,12 @@
     "static/media/RoosanReseptitLogo.png": "/WMKprojekti/static/media/RoosanReseptitLogo.72b6ed1db753e3b94cdb.png",
     "static/media/index.cjs": "/WMKprojekti/static/media/index.671993152dc0f6e0b17a.cjs",
     "index.html": "/WMKprojekti/index.html",
-    "main.e14e2bd1.css.map": "/WMKprojekti/static/css/main.e14e2bd1.css.map",
-    "main.d24b4315.js.map": "/WMKprojekti/static/js/main.d24b4315.js.map",
+    "main.0f1735ce.css.map": "/WMKprojekti/static/css/main.0f1735ce.css.map",
+    "main.d9e2a375.js.map": "/WMKprojekti/static/js/main.d9e2a375.js.map",
     "592.5eb7f504.chunk.js.map": "/WMKprojekti/static/js/592.5eb7f504.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e14e2bd1.css",
-    "static/js/main.d24b4315.js"
+    "static/css/main.0f1735ce.css",
+    "static/js/main.d9e2a375.js"
   ]
 }
